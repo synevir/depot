@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  get 'store/index'
+
   resources :products
 
-  root 'products#index'
+#  root 'products#index'
+  root to: 'store#index', as: 'store'
+# символ as: определяет название маршрута + _path
+# в данном случае это будет store_path
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

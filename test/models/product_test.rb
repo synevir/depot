@@ -23,14 +23,14 @@ class ProductTest < ActiveSupport::TestCase
     product.price = -1
     assert product.invalid?
 
-    assert_equal ["must be greater than or equal to 0.01"],
+    assert_equal ["Цена не может быть меньше 0,01."],
       product.errors[:price]
 
     # должна быть больше или равна 0.01
     product.price = 0
     assert product.invalid?
 
-    assert_equal ["must be greater than or equal to 0.01"],
+    assert_equal ["Цена не может быть меньше 0,01."],
       product.errors[:price]
 
     product.price = 1
@@ -62,12 +62,13 @@ end
 
   test "product is not valid without a unique title" do
 # если у товара нет уникального названия, то он недопустим
-    product = Product.new(title: products(:ruby).title,
+    product = Product.new(title: products(:rails).title,
 			description: "yyy",
 			price: 1,
 			image_url: "fred.gif")
     assert product.invalid?
-    assert_equal [I18n.translate('activerecord.errors.messages.taken')], product.errors[:title]
+	assert_equal ["has already been taken"], product.errors[:title]
+#     assert_equal [I18n.translate('activerecord.errors.messages.taken')], product.errors[:title]
     # уже было использовано
   end
 
