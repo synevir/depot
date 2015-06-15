@@ -1,0 +1,27 @@
+/*.carts {
+  .item_price, .total_line {
+     text-align: right;
+  }
+
+  .total_line .total_cell {
+     font-weight: bold;
+     border-top: 1px solid #595;
+  }
+}*/
+
+
+#total_cell, .total_line {
+  font-weight: bold;
+   text-align: right;
+   border-top: 1px solid;
+   font-color: red;
+}
+
+th {
+	  color: #282;
+  font-size: 18px;
+}
+
+.item_price{
+  text-align: right;
+}
