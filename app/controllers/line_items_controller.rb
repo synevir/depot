@@ -32,7 +32,8 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart }
+#         format.html { redirect_to @line_item.cart }
+		  format.html { redirect_to store_path }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
@@ -65,7 +66,8 @@ class LineItemsController < ApplicationController
 	end
 
     respond_to do |format|
-	  format.html { redirect_to(@line_item.cart, :notice => 'Позиция была удалена' ) }
+# 	  format.html { redirect_to(@line_item.cart, :notice => 'Позиция была удалена' ) }
+      format.html { redirect_to(store_path, :notice => 'Позиция была удалена' ) }
 	  format.json { head :no_content }
     end
   end

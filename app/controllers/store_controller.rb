@@ -1,4 +1,8 @@
 class StoreController < ApplicationController
+  include CurrentCart
+  before_action :set_cart
+
+
   #------------- variant#4 -------------
 #   before_filter :increment_count, only: [:index]
 

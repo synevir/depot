@@ -1,22 +1,3 @@
-<!--<style>
-   #total_cell, .total_line {
-     color: margin;
-     font-weight: bold;
-     text-align: right;
-     border-top: 1px solid;
-   }
-   th {
-     color: #282;
-     font-size: 18px;
-   }
-   .item_price{
-     text-align: right;
-   }
-   .quantity{
-     text-align: center;
-   }
-</style>-->
-
 <table id='cart_table'>
 	<tr>
 		<th> Product  </th>
@@ -24,23 +5,9 @@
 		<th> items    </th>
 		<th> Summa    </th>
 	</tr>
-  <% @cart.line_items.each do |item| %>
-    <tr>
-      <td> <%= item.product.title %> </td>
-      <td class="item_price">
-          <%= number_to_currency(item.product.price, unit: UAH, delimiter: " ",
-								format: "%n %u") %>
-      </td>
-      <td class="quantity"> <%= item.quantity %>&times;</td>
-      <td class="item_price">
-          <%= number_to_currency(item.total_price, unit: UAH, delimiter: " ",
-								format: "%n %u")%>
-      </td>
-      <td> <%= button_to 'Удалить позицию', item, method: :delete %> </td>
-    </tr>
-  <% end %>
+	<%= render(@cart.line_items) %>
 
-  <tr class="total_line">
+    <tr class="total_line">
     <td colspan="3">Total:</td>
     <td id="total_cell">
       <%= number_to_currency(@cart.total_price, unit: "₴",  delimiter: " ",
