@@ -4,10 +4,9 @@
 
 <h1>Your Pragmatic Catalog</h1>
 
-<% cache ['store', Product.latest] do %>	<!--#для ускорения отображения кешируется последний измененный продукт-->
+
 
   <% @products.each do |product| %>
-  <% cache ['entry', product] do %>
     <div class="entry">
       <hr />
       <h3><%= product.title %></h3>
@@ -21,6 +20,5 @@
         </div>
     </div>
   <% end %>
-  <% end %>
 
-<% end %>
+
