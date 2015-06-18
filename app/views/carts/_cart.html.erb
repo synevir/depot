@@ -4,6 +4,7 @@
 
 <h2>Your Cart:</h2>
 <hr />
+
 <table id='cart_table'>
   <tr>
 	<th> Product  </th>
@@ -21,11 +22,8 @@
   </tr>
 </table>
 
-<%#= render 'table_of_cart_line_items' %>
-<%#= render 'warning_price_block' if(cart.total_price > 1_000) %>
+<%= render 'carts/warning_price_block' if(cart.total_price > 1_000) %>
 <hr />
 
 <%= button_to 'Очистить корзину', cart, method: :delete,
                 data: { confirm: 'Are you sure?' } %>
-
-
