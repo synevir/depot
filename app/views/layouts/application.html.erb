@@ -16,10 +16,21 @@
   <div id="columns">
 
 	<div id="side">
+<!--
 	  <div id="cart">
-        <%= render @cart %>
+        <%#= render @cart %>
+      </div>
+-->
+      <div id="cart"
+         <% if @cart.line_items.empty? %>
+            style="display: none"
+         <% end %>
+         >
+         <%= render(@cart) %>
       </div>
 
+
+<br>
 	  <div id="date">
 		<%= DateTime.now.strftime("%Y-%m-%d / %H:%M") %>
 		<%= 'session_count - ' + session[:count].to_s %>

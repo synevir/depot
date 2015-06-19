@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery-ui/effect-blind
+//= require jquery-ui/effect-fold
+//= require jquery-ui/effect-explode
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .

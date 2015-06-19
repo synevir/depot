@@ -1,4 +1,9 @@
+if ($('#cart tr').length == 2) { $('#cart').show("fold", 1000);}
+
+
 $('#cart').html("<%= escape_javascript render(@cart) %>");
+
+
 
 $('#current_item').css({'color':' #A52A2A'}).
    animate({'color':'white'}, 1000);
