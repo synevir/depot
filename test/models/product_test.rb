@@ -33,6 +33,15 @@ class ProductTest < ActiveSupport::TestCase
     assert_equal ["Цена не может быть меньше 0,01."],
       product.errors[:price]
 
+
+	# должна быть меньше 1_000
+#     product.price = 1001
+#     assert product.invalid?
+#
+#     assert_equal ["Цена не может быть более 1 000 €."],
+#       product.errors[:price]
+
+
     product.price = 1
     assert product.valid?
   end

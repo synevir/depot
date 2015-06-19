@@ -29,12 +29,11 @@
          <%#= render(@cart) %>
       </div>-->
 
-<!--       <div id="cart"> -->
+      <% if @cart %>
         <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
           <%= render @cart %>
         <% end %>
-<!-- 	  </div> -->
-
+      <% end %>
 
 <br>
 	  <div id="date">
