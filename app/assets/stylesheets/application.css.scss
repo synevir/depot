@@ -129,3 +129,57 @@
   margin-top: 45px;
   @include box_sizing;
 }
+
+
+
+/* форма заказа */
+
+.depot_form {
+
+  fieldset {
+	background: #9c9;
+    legend {
+        color: #dfd;
+        background: #141;
+        font-family: sans-serif;
+        padding: 0.2em 1em;
+    }
+  }
+
+  form {
+    label {
+      width: 5em;
+      float: left;
+      text-align: right;
+      padding-top: 0.2em;
+      margin-right: 0.1em;
+      display: block;
+    }
+    select, textarea, input {
+      margin-left: 0.5em;
+    }
+    .submit {
+      margin-left: 4em;
+    }
+    br {
+      display: none
+    }
+
+    hr{
+	  width: 27em;
+	  text-align: left;
+	  margin-left: 0;		/*без маргина text-align не срабатывает */
+	}
+  }
+
+}
+
+
+/* выделение полей, не прошедших валидацию */
+.field_with_errors {
+  padding: 1px;
+  background-color: orange;
+
+  display: table;
+}
+

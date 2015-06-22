@@ -22,6 +22,8 @@
   </tr>
 </table>
 
+<%= button_to "Оформить заказ", new_order_path, method: :get %>
+<br>
 <%= render 'carts/warning_price_block' if(cart.total_price > 1_000) %>
 <hr />
 
