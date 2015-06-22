@@ -22,10 +22,34 @@
   </tr>
 </table>
 
-<%= button_to "Оформить заказ", new_order_path, method: :get %>
+
+<!-- Вариант 1  деактивация кнопки после орисовки формы заказа -->
+<%= button_to("Оформить заказ", new_order_path, method: :get, :disabled => !@order.nil?) %>
+
+<!-- Вариант 2 -->
+<%#= button_to "Оформить заказ", new_order_path, method: :get if(@order.nil?) %>
+
+
+<!-- Вариант 3 -->
+<%# if(@hide_button_checkout) %>
+  <%#= button_to "Оформить заказ", new_order_path, method: :get, disabled: @hide_button_checkout %>
+  <% @hide_button_checkout = false %>
+<%# else %>
+  <%#= button_to "Оформить заказ", new_order_path, method: :get, disabled: @hide_button_checkout %>
+<%# end %>
+
+
+
+
+
+
+
 <br>
 <%= render 'carts/warning_price_block' if(cart.total_price > 1_000) %>
 <hr />
 
 <%= button_to 'Очистить корзину', cart, method: :delete,
                 data: { confirm: 'Clear the cart?' } %>
+<br>
+<br>
+@hide_button_checkout = <%= @hide_button_checkout %>

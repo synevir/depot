@@ -23,6 +23,7 @@ class OrdersController < ApplicationController
     end
 
 	@order = Order.new
+	@hide_button_checkout = true
   end
 
   # GET /orders/1/edit
@@ -33,7 +34,6 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
 	@order.add_line_items_from_cart(@cart)
-
 
     respond_to do |format|
       if @order.save
