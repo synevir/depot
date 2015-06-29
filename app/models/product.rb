@@ -15,8 +15,8 @@ class Product < ActiveRecord::Base
   validates :description, :image_url, presence: true
 
   validates :price, numericality: { greater_than_or_equal_to: 0.01,
-                      message: "Цена не может быть меньше 0,01." ,
-                                    less_than_or_equal_to: 1_000,
+                      message: "Цена не может быть меньше 0,01." }
+  validates :price, numericality: { less_than_or_equal_to: 1_000,
                       message: "Цена не может быть более 1 000 €." }
 
   validates :title, uniqueness: true,

@@ -14,7 +14,9 @@
           <%= number_to_currency(line_item.total_price, unit: UAH, delimiter: " ",
 								format: "%n %u")%>
   </td>
-  <td> <%= button_to 'Удалить позицию', line_item, method: :delete %>
-  </td>
-
+<!--   условие добавлено для унификации шаблона при генерации почтового сообщения -->
+  <% if @order.nil? %>
+      <td> <%= button_to 'Удалить', line_item, method: :delete %>
+      </td>
+  <% end %>
 </tr>

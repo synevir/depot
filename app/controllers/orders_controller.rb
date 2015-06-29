@@ -39,6 +39,7 @@ class OrdersController < ApplicationController
       if @order.save
 		Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+		OrderNotifier.received(@order).deliver_now		#отправка почтового уведомления
         format.html { redirect_to store_url, notice: 'Спасибо за Ваш заказ.' }
         format.json { render :show, status: :created, location: @order }
       else
@@ -52,6 +53,13 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
+# 	@order = Order.find(params[:id])
+#--------------------------------------------------------
+# после обновления заказа отправляем письмо об отправке
+	@order.ship_date = DateTime.now
+	OrderNotifier.shipped(@order).deliver_now
+# ----------------------------------------------------------
+
     respond_to do |format|
       if @order.update(order_params)
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
