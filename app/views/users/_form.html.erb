@@ -1,0 +1,72 @@
+<div class="depot_form">
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %>,  сведения
+			об этом пользователе не могут быть сохранены.
+	  </h2>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <legend>Введите сведения о пользователе</legend>
+
+    <table id="user_fields">
+	  <tr>
+		<td><%= f.label :name, 'Имя:' %></td>
+		<td>
+		  <div class="field">
+		    <%= f.text_field :name, size: 30, value: 'user'  %>
+		  </div>
+		</td>
+	  </tr>
+	  <tr>
+		<td><%= f.label :password, 'Пароль:' %> </td>
+		<td>
+		  <div class="field">
+		    <%= f.password_field :password, size: 30, value: 1 %>
+		  </div>
+		</td>
+	  </tr>
+	  <tr>
+		<td><%= f.label :password_confirmation, 'Повтор:'%> </td>
+		<td>
+		  <div class="field">
+		    <%= f.password_field :password_confirmation, size: 30, value: 1 %>
+		  </div>
+		</td>
+	  </tr>
+
+<!-- поле ввода текущего пароля при смене пароля -->
+	  <% if params[:action] == "edit" || params[:action] == "update"%>
+	    <tr>
+	      <td colspan=2 class="border_bottom">
+	        Для подтверждения смены пароля введите текущий пароль:
+	      </td>
+	    </tr>
+	    <tr>
+		  <td> <%= f.label :current_password, 'Текущий пароль:' %></td>
+		  <td>
+		    <div class="field">
+			  <%= f.password_field :current_password, size: 30 %>
+		    </div>
+		  </td>
+		</tr>
+	  <% end %>
+
+    </table>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </fieldset>
+
+<% end %>
+
+</div>

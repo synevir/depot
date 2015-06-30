@@ -15,6 +15,7 @@
 
   <div id="columns">
 
+<!--   левый сайд-бар для корзины -->
 	<div id="side">
 <!--
 	  <div id="cart">
@@ -38,17 +39,28 @@
 <br>
 	  <div id="date">
 		<%= DateTime.now.strftime("%Y-%m-%d / %H:%M") %>
-		<%= 'session_count - ' + session[:count].to_s %>
 		<br>
-		index_vizit - <%= @index_vizit %>
+		<%#= 'session_count - ' + session[:count].to_s %>
+		<%#= 'index_vizit -' + @index_vizit.to_s %>
 	  </div>
 	  <ul>
-		<li><a href="http://www....">Home</a></li>
-		<li><a href="http://www..../faq">Questions</a></li>
-		<li><a href="http://www..../news">News</a></li>
+		<li><a href="http://www....">Home</a>           </li>
+		<li><a href="http://www..../faq">Questions</a>  </li>
+		<li><a href="http://www..../news">News</a>      </li>
 		<li><a href="http://www..../contact">Contact</a></li>
 	  </ul>
+
+	  <% if session[:user_id] %>
+	    <ul>
+          <li><%= link_to 'Orders', orders_path %>    </li>
+          <li><%= link_to 'Products', products_path %></li>
+          <li><%= link_to 'Users', users_path %>      </li>
+        </ul>
+        <%= button_to 'Logout', logout_path, method: :delete %>
+      <% end %>
+
     </div>
+<!-- 	  конец левого сайд-бара -->
 
     <div id="main">
       <%= yield %>

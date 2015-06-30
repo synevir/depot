@@ -29,7 +29,7 @@ class OrdersControllerTest < ActionController::TestCase
                           pay_type: @order.pay_type }
     end
 
-    assert_redirected_to order_path(store_path)
+    assert_redirected_to store_path
   end
 
   test "should show order" do

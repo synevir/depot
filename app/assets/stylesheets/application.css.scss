@@ -148,7 +148,7 @@
 
   form {
     label {
-      width: 5em;
+      width: 6em;
       float: left;
       text-align: right;
       padding-top: 0.2em;
@@ -166,7 +166,7 @@
     }
 
     hr{
-	  width: 27em;
+	  width: 29em;
 	  text-align: left;
 	  margin-left: 0;		/*без маргина text-align не срабатывает */
 	}
@@ -182,3 +182,17 @@
 
   display: table;
 }
+
+/* Таблица редактирования данных пользователя */
+#user_fields {
+  border-width: 5px;
+
+  td.border_bottom {
+	border-bottom: 1px;
+	background: #fc3;
+  }
+}
+
+
+
+
