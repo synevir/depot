@@ -2,29 +2,34 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 
-<h2>Your Cart:</h2>
+<!-- <h2>Your Cart:</h2> -->
+<h2><%= t('.title')%></h2>
+
 <hr />
 
-<table id='cart_table'>
+<table id='cart_table' border="0">
   <tr>
-	<th> Product  </th>
-	<th> Price    </th>
-	<th> items    </th>
-	<th> Summa    </th>
+	<th> <%= t('.cart_table_product') %>  </th>
+	<th> <%= t('.cart_table_price')   %>  </th>
+	<th> <%= t('.cart_table_items')   %>  </th>
+	<th> <%= t('.cart_table_summ')    %>  </th>
   </tr>
   <%= render(cart.line_items) %>
   <tr class="total_line">
-    <td colspan="3">Total:</td>
-    <td id="total_cell">
+    <td colspan="2">Total:</td>
+    <td colspan="2"id="total_cell" align="center">
       <%= number_to_currency(cart.total_price, unit: "₴",  delimiter: " ",
 							 format: "%n %u")%>
     </td>
+
   </tr>
 </table>
 
-
+<!-- кнопка "оформить заказ" различные варианты деактивации после нажатия-->
+<!--  ================================================================== -->
 <!-- Вариант 1  деактивация кнопки после орисовки формы заказа -->
-<%= button_to("Оформить заказ", new_order_path, method: :get, :disabled => !@order.nil?) %>
+<%#= button_to("Оформить заказ", new_order_path, method: :get, :disabled => !@order.nil?) %>
+<%= button_to( t('.checkout'), new_order_path, method: :get, :disabled => !@order.nil?) %>
 
 <!-- Вариант 2 -->
 <%#= button_to "Оформить заказ", new_order_path, method: :get if(@order.nil?) %>
@@ -38,9 +43,7 @@
   <%#= button_to "Оформить заказ", new_order_path, method: :get, disabled: @hide_button_checkout %>
 <%# end %>
 
-
-
-
+<!-- ============================================================================== -->
 
 
 
@@ -48,7 +51,16 @@
 <%= render 'carts/warning_price_block' if(cart.total_price > 1_000) %>
 <hr />
 
-<%= button_to 'Очистить корзину', cart, method: :delete,
-                data: { confirm: 'Clear the cart?' } %>
+<%#= button_to 'Очистить корзину', cart, method: :delete, data: { confirm: 'Clear the cart?' } %>
+<%= button_to t('.empty'), cart, method: :delete,
+			  data: { confirm: t('.empty_confirm') } %>
 <br>
 <br>
+
+
+<!--carts:
+    cart:
+      title: "Ваша Корзина"
+      empty: "Очистить корзину"
+      checkout: "Оформить заказ"
+      empty_confirm: "Все добавленные товары будут удалены. Очистить корзину?"-->

@@ -10,6 +10,12 @@ class StoreController < ApplicationController
 
   def index
 	@products = Product.order(:title)
+    if params[:set_locale]
+      redirect_to store_url(locale: params[:set_locale])
+    else
+      @products = Product.order(:title)
+    end
+
 
 	# ------ variant #1 -------------
 	@index_vizit = increment_count

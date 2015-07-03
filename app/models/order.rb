@@ -13,5 +13,10 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def order_sum
+	line_items.to_a.sum { |item| item.total_price }
+  end
+
+
 
 end
