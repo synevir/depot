@@ -2,6 +2,23 @@ ua:
   activerecord:
     models:
       order: "замовлення"
+
+    errors:
+      models:
+        order:
+          attributes:
+            name:
+                too_short: "- дуже коротке ім\'я "              
+            email:
+                invalid:   "- помилковий формат eлектронної скрині"                
+            pay_type:
+                inclusion: "- потрiбно обрати засiб оплати"
+                
+            
+      messages:        
+        too_short: "- дуже коротка"        
+        blank:     "- не може бути пустим"
+
     attributes:
       order:
         address:  "Адреса доставки"
@@ -9,16 +26,11 @@ ua:
         email:    "E-mail"
         pay_type: "Засiб сплати"
 
-    errors:
-      messages:
-        inclusion: "- потрiбно обрати засiб оплати"
-        blank:     "- не може бути пустим"
-
   errors:
     template:
       body: "Поля з помилками:"
       header:
-        one: "1 помилка при заповненнi форми %{model}"
+        one:   "1 помилка при заповненнi форми %{model}"
         other: "%{count} помилки при заповненнi форми %{model}"
 
 
@@ -36,9 +48,9 @@ ua:
       delimeter: '-'
     currency:
       format:
-        unit: '₴'
+        unit:     "₴"
         precision: 2
-        format: "%n %u"
+        format:   "%n %u"
 
   store:
     index:
@@ -49,26 +61,35 @@ ua:
 
   carts:
     cart:
-      title: "Ваш Кошик"
-      empty: "Очистити кошик"
-      checkout: "Оформити замовлення"
-      empty_confirm: "Очистити кошик?"
+      title:              "Ваш Кошик"
+      empty:              "Очистити кошик"
+      checkout:           "Оформити замовлення"
+      empty_confirm:      "Очистити кошик?"
       cart_table_product: "Продукт"
       cart_table_price:   "Цiна"
       cart_table_items:   "к-сть"
       cart_table_summ:    "Сума"
+      
+  line_items:
+    line_item:
+      delete_item: "Видалити"
 
   orders:
     new:
       legend: "Будь ласка, заполнiть форму"
 
     form:
-      name:         "Iм`я"
-      address_html: "Адреса доставки"
-      email:        "E-mail"
-      pay_type:     "Засiб сплати:"
-      submit:       "Вiдправити заказ"
+      name:            "Iм`я"
+      address_html:    "Адреса доставки"
+      email:           "E-mail"
+      pay_type:        "Засiб сплати:"
+      submit:          "Вiдправити заказ"
       pay_prompt_html: "Оберiть засiб сплати"
+
+
+  sessions:
+    new:
+      legend: "Зареєструйтеся,будь ласка"
 
 
   thanks: "Дякуємо за Ваше замовлення"

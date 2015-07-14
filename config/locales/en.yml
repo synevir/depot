@@ -52,6 +52,10 @@ en:
       cart_table_price:   "Price"
       cart_table_items:   "Items"
       cart_table_summ:    "Sum"
+      
+  line_items:
+    line_item:
+      delete_item: "Delete"
 
   orders:
     new:
@@ -64,7 +68,7 @@ en:
       pay_type:     "Pay with"
       pay_prompt_html: "Select a payment method"
       submit:       "Place Order"
-    
+
     payment_types:
       check: "Check"
       credit_card: "Credit Card" 

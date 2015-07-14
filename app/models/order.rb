@@ -3,7 +3,11 @@ class Order < ActiveRecord::Base
 
   PAYMENT_TYPES = [ "Check", "Credit card", "Purchase order" ]
 
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+
   validates :name, :address, :email, presence: true
+  validates :email, format: { with: VALID_EMAIL_REGEX }, allow_blank: true
+  validates :address, :name, length: { minimum: 2 },     allow_blank: true
   validates :pay_type, inclusion: PAYMENT_TYPES
 
   def add_line_items_from_cart(cart)

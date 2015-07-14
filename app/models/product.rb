@@ -9,8 +9,7 @@ class Product < ActiveRecord::Base
 
 # -------------------- validates block ---------------------------------------
 # ----------------------------------------------------------------------------
-  validates_presence_of :title,
-					message: "Поле заголовка должно быть заполнено!"
+  validates_presence_of :title, message: "Поле заголовка должно быть заполнено!"
 
   validates :description, :image_url, presence: true
 
@@ -19,15 +18,12 @@ class Product < ActiveRecord::Base
   validates :price, numericality: { less_than_or_equal_to: 1_000,
                       message: "Цена не может быть более 1 000 €." }
 
-  validates :title, uniqueness: true,
-		  length: { minimum: 10, too_short:
-                    "Название должно иметь не менее %{count} символов."
-           }
+  validates :title, uniqueness: true, length: { minimum: 10, too_short:
+                    "Название должно иметь не менее %{count} символов." }
 
   validates :image_url, allow_blank: true, format: {
 					with: %r{\.(gif|jpg|png)\Z}i,
-					message: 'URL must be GIF, JPG or PNG format.'
-                   }
+					message: 'URL must be GIF, JPG or PNG format.' }
 # -----------------------------------------------------------------------------
 
 #   для кеширования товаров, которые были изменены
@@ -36,7 +32,7 @@ class Product < ActiveRecord::Base
   end
 
   private
-   # убеждаемся в отсутствии товарных позиций, ссылающихся на данный товар
+#   убеждаемся в отсутствии товарных позиций, ссылающихся на данный товар
     def ensure_not_referenced_by_any_line_item
       if line_items.empty?
         return true

@@ -1,7 +1,3 @@
-<% if notice %>
-  <p id="notice"><%= notice %></p>
-<% end %>
-
 <!-- <h2>Your Cart:</h2> -->
 <h2><%= t('.title')%></h2>
 
@@ -18,8 +14,7 @@
   <tr class="total_line">
     <td colspan="2">Total:</td>
     <td colspan="2"id="total_cell" align="center">
-      <%= number_to_currency(cart.total_price, unit: "₴",  delimiter: " ",
-							 format: "%n %u")%>
+      <%= number_to_currency(cart.total_price, delimiter: " ", format: "%n %u")%>
     </td>
 
   </tr>
@@ -46,10 +41,10 @@
 <!-- ============================================================================== -->
 
 
-
 <br>
 <%= render 'carts/warning_price_block' if(cart.total_price > 1_000) %>
 <hr />
+
 
 <%#= button_to 'Очистить корзину', cart, method: :delete, data: { confirm: 'Clear the cart?' } %>
 <%= button_to t('.empty'), cart, method: :delete,

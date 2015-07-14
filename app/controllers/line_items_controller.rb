@@ -62,11 +62,11 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
-	if @line_item.quantity > 1
+    if @line_item.quantity > 1
       @line_item.update_attributes(:quantity => @line_item.quantity - 1)
     else
-	  @line_item.destroy
-	end
+      @line_item.destroy
+    end
 
     respond_to do |format|
 # 	  format.html { redirect_to(@line_item.cart, :notice => 'Позиция была удалена' ) }

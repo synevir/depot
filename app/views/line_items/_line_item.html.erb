@@ -11,12 +11,12 @@
   </td>
   <td class="quantity"> <%= line_item.quantity %>&times;</td>
   <td class="item_price" align="right" nowrap>
-          <%= number_to_currency(line_item.total_price, unit: UAH, delimiter: " ",
+          <%= number_to_currency(line_item.total_price, delimiter: " ",
 								format: "%n %u")%>
   </td>
 <!--   условие добавлено для унификации шаблона при генерации почтового сообщения -->
   <% if @order.nil? %>
-      <td> <%= button_to 'Удалить', line_item, method: :delete %>
+      <td> <%= button_to( t('.delete_item'), line_item, method: :delete ) %>
       </td>
   <% end %>
 </tr>
