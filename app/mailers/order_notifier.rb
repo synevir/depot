@@ -9,7 +9,7 @@ class OrderNotifier < ApplicationMailer
   #   en.order_notifier.received.subject
   #
   def received(order)
-	@order = order
+    @order = order
 
     mail to: order.email, subject: 'Подтверждение заказа в Pragmatic Store'
 
@@ -21,7 +21,7 @@ class OrderNotifier < ApplicationMailer
   #   en.order_notifier.shipped.subject
   #
   def shipped(order)
-	@order = order
+    @order = order
     mail to: order.email, subject: 'Заказ из Pragmatic Store отправлен'
   end
 end
