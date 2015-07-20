@@ -1,24 +1,8 @@
-<p id="notice"><%= notice %></p>
+<!-- <h1>Your Pragmatic Catalog</h1> -->
+<!-- <h2><%#= t('.title_product_details') %></h2> -->
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<% if signed_in?%>
+    <%= render 'products/show_if_signed' %>
+<% else %>
+    <%= render 'products/show_not_signed' %>
+<% end %>

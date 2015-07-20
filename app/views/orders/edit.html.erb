@@ -1,6 +1,11 @@
-<h1>Editing Order</h1>
+<h2>Editing Order #<%= @order.id%></h2>
 
 <%= render 'form' %>
+
+<p>
+  <strong>Items:</strong>
+  <%= render @order.line_items %>
+</p>
 
 <%= link_to 'Show', @order %> |
 <%= link_to 'Back', orders_path %>

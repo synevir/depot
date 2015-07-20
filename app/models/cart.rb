@@ -1,7 +1,8 @@
 class Cart < ActiveRecord::Base
 	has_many :line_items, dependent: :destroy
 
-	::UAH ='₴'   # константа для отображения знака валюты в представлении
+	::UAH ='₴'               # константа для отображения знака валюты в представлении
+	WARNING_PRICE = 1_000    # для предупреждения о превышении определенного значения
 
 	def add_product(product_id)
 	  current_item = line_items.find_by(product_id: product_id)

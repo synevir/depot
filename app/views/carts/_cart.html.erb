@@ -12,7 +12,7 @@
   </tr>
   <%= render(cart.line_items) %>
   <tr class="total_line">
-    <td colspan="2">Total:</td>
+    <td colspan="2"> <%= t('.cart_table_total') %></td>
     <td colspan="2"id="total_cell" align="center">
       <%= number_to_currency(cart.total_price, delimiter: " ", format: "%n %u")%>
     </td>
@@ -42,7 +42,7 @@
 
 
 <br>
-<%= render 'carts/warning_price_block' if(cart.total_price > 1_000) %>
+<%= render 'carts/warning_price_block' if(cart.total_price > Cart::WARNING_PRICE) %>
 <hr />
 
 

@@ -35,11 +35,13 @@ es:
 
   layouts:
     application:
-      title:     "Publicaciones de Pragmatic"
-      home:      "Inicio"
-      questions: "Preguntas"
-      news:      "Noticias"
-      contact:   "Contacto"
+      title:      "Publicaciones de Pragmatic"
+      home:       "Inicio"
+      questions:  "Preguntas"
+      news:       "Noticias"
+      contact:    "Contacto"
+      price_html: "Precio de producto: "
+      login:      "Еntrada"
 
 
   store:
@@ -47,8 +49,20 @@ es:
       title_html: "Su Cat&aacute;logo de Pragmatic"
       add_html:   "A&ntilde;adir al Carrito"
       price_html: "Precio: "
+      product_details: "Descripción detallada"
 
 
+  products:
+    show:
+      title_product_details: "Detalles Del Producto"
+    show_if_signed:
+      price_html: "Precio: "
+    show_not_signed:
+      price_html:      "Precio: "
+      product_details: "Descripción detallada"
+    
+      
+      
   carts:
     cart:
       title:         "Carrito de la Compra"
@@ -59,6 +73,7 @@ es:
       cart_table_price:   "Precio"
       cart_table_items:   "C-ad"
       cart_table_summ:    "Suma"
+      cart_table_total:   "Total:"
       
       
   line_items:

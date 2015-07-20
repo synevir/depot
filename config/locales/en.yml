@@ -27,6 +27,7 @@ en:
       questions: "Questions"
       news:      "News"
       contact:   "Contact"
+      login:     "Login"
 
   number:
     currency:
@@ -41,7 +42,17 @@ en:
       title_html: "Your Pragmatic Catalog"
       add_html:   "Add to Cart"
       price_html: "Price: "
+      product_details: "Product details:"
 
+  products:
+    show:
+      title_product_details: "Product details:"
+    show_if_signed:
+      price_html: "Price: "
+    show_not_signed:
+      price_html:      "Price: "
+      product_details: "Product details:"
+    
   carts:
     cart:
       title: "Your Cart"
@@ -52,6 +63,7 @@ en:
       cart_table_price:   "Price"
       cart_table_items:   "Items"
       cart_table_summ:    "Sum"
+      cart_table_total:   "Total:"
       
   line_items:
     line_item:
@@ -70,8 +82,8 @@ en:
       submit:       "Place Order"
 
     payment_types:
-      check: "Check"
-      credit_card: "Credit Card" 
+      check:          "Check"
+      credit_card:    "Credit Card" 
       purchase_order: "Purchase Order" 
 
   thanks: "Thank you for your order"

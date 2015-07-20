@@ -36,11 +36,14 @@ ua:
 
   layouts:
     application:
-      title:     "Книжкова полиця прагматика"
-      home:      "Домашня сторiнка"
-      questions: "Питання"
-      news:      "Новини"
-      contact:   "Контакти"
+      title:      "Книжкова полиця прагматика"
+      home:       "Домашня сторiнка"
+      questions:  "Питання"
+      news:       "Новини"
+      contact:    "Контакти"
+      price_html: "Вартiсть: "
+      login:      "Вхiд"
+      
 
   number:
     format:
@@ -57,7 +60,16 @@ ua:
       price_html: "Цiна: "
       title_html: "Tвiй прагматичний каталог"
       add_html:   "Додати до кошика"
+      product_details: "Докладний опис"
+  
+  products:
+    show:
+      title_product_details: "Детальна інформація"      
+    show_if_signed:
       price_html: "Вартiсть: "
+    show_not_signed:
+      price_html:      "Вартiсть: "
+      product_details: "Докладний опис"
 
   carts:
     cart:
@@ -69,6 +81,7 @@ ua:
       cart_table_price:   "Цiна"
       cart_table_items:   "к-сть"
       cart_table_summ:    "Сума"
+      cart_table_total:   "Загалом:"
       
   line_items:
     line_item:

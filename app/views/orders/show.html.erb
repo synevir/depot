@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+
+<!--   <strong>Order #:</strong> -->
+Order # <%= @order.id %>
+<hr />
+
 <p>
   <strong>Name:</strong>
   <%= @order.name %>
@@ -18,6 +23,12 @@
 <p>
   <strong>Pay type:</strong>
   <%= @order.pay_type %>
+</p>
+
+<hr />
+<p>
+  <strong>Items:</strong>
+  <%= render @order.line_items %>
 </p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |

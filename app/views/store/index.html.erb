@@ -8,9 +8,10 @@
   <% @products.each do |product| %>
     <div class="entry">
       <hr />
-      <h3><%= product.title %></h3>
+      <h3> <%= product.title %> </h3>
       <%= image_tag(product.image_url) %>
-        <p> <%= sanitize(product.description) %> </p>
+      <p> <%= sanitize(product.description) %> </p>
+      <%= link_to t('.product_details'), product %><br/>
         <div class="price_line">
         <table border="0">
           <tr>
