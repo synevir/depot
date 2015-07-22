@@ -9,13 +9,13 @@ class StoreController < ApplicationController
 
 
   def index
-	@products = Product.order(:title)
+# 	@products = Product.order(:title)
+	@products = Product.search('ruby')
     if params[:set_locale]
-      redirect_to store_url(locale: params[:set_locale])
+      redirect_to store_url(locale: params[:set_locale]), notice: 'find'+@products.count
     else
       @products = Product.order(:title)
     end
-
 
 	# ------ variant #1 -------------
 	@index_vizit = increment_count

@@ -2,8 +2,28 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 
+
 <!-- <h1>Your Pragmatic Catalog</h1> -->
-  <h1><%= t('.title_html') %></h1>
+  <table border="0" width="100%">
+  <tr>
+    <td> <h1><%= t('.title_html') %></h1> </td>
+    <td align = "right">
+      <!--   Форма поиска -->
+      <%= form_tag request.path, :method => 'get' do %>
+        <%= text_field_tag :search, params[:search],class: 'style-1',
+                     :placeholder => "search sting..."%>
+        <%= submit_tag 'Find...', :name => nil %>
+      <% end %>
+    </td>
+  </tr>
+  </table>
+<!-- ************************************************************* -->
+
+  Total products in store - <%= @products.count%>
+  <% @products = @products.paginate(page: params[:page], per_page: 3) %>
+  <div class="apple_pagination store_pag">
+    <%= will_paginate @products %>
+  </div>
 
   <% @products.each do |product| %>
     <div class="entry">
@@ -29,5 +49,9 @@
         </div>
     </div>
   <% end %>
+  <hr />
+  <div class="apple_pagination store_pag" >
+    <%= will_paginate @products %>
+  </div>
 
 
