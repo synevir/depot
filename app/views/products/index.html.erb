@@ -4,13 +4,7 @@
 
 <h1>Listing Products</h1>
 
-<p>
-<%= form_tag products_path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:search], class: 'style-1',
-                     :placeholder => "search by title..."%>
-  <%= submit_tag 'Find product', :name => nil %>
-<% end %>
-</p>
+<p> <%= render 'layouts/form_search' %> </p>
 
 Total products in store - <%= @products.count%>
 <% @products = @products.paginate(page: params[:page], per_page: 3) %>

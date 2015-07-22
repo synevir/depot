@@ -13,8 +13,7 @@ ua:
                 invalid:   "- помилковий формат eлектронної скрині"                
             pay_type:
                 inclusion: "- потрiбно обрати засiб оплати"
-                
-            
+                         
       messages:        
         too_short: "- дуже коротка"        
         blank:     "- не може бути пустим"
@@ -43,7 +42,9 @@ ua:
       contact:    "Контакти"
       price_html: "Вартiсть: "
       login:      "Вхiд"
-      
+    form_search:
+      find:          "Знайти"
+      search_string: "Шукати..."  
 
   number:
     format:
@@ -55,12 +56,13 @@ ua:
         precision: 2
         format:   "%n %u"
 
-  store:
-    index:
-      price_html: "Цiна: "
-      title_html: "Tвiй прагматичний каталог"
-      add_html:   "Додати до кошика"
-      product_details: "Докладний опис"
+  store:    
+    title:
+      title_html: "Tвiй прагматичний каталог"    
+    product:
+      price_html:      "Цiна: "      
+      add_html:        "Додати до кошика"
+      product_details: "Докладний опис"      
   
   products:
     show:
@@ -87,17 +89,17 @@ ua:
     line_item:
       delete_item: "Видалити"
 
-  orders:
+  orders:    
+    name:            "Iм`я"
+    address_html:    "Адреса доставки"
+    email:           "E-mail"
+    pay_type:        "Засiб сплати"
+    submit:          "Вiдправити заказ"
+    pay_prompt_html: "Оберiть засiб сплати"
+    
     new:
       legend: "Будь ласка, заполнiть форму"
 
-    form:
-      name:            "Iм`я"
-      address_html:    "Адреса доставки"
-      email:           "E-mail"
-      pay_type:        "Засiб сплати:"
-      submit:          "Вiдправити заказ"
-      pay_prompt_html: "Оберiть засiб сплати"
 
 
   sessions:

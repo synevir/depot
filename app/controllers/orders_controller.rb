@@ -9,6 +9,12 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.search(params[:search])
+     if params[:set_locale]
+       redirect_to order_url(locale: params[:set_locale])
+     else
+#        @orders = Order.order(:name)
+	   @orders = Order.search(params[:search])
+     end
   end
 
   def show

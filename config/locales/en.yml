@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  layouts:
+  layouts:    
     application:
       title:     "Pragmatic Bookshelf"
       home:      "Home page"
@@ -28,21 +28,27 @@ en:
       news:      "News"
       contact:   "Contact"
       login:     "Login"
+      
+    form_search:
+      find:          "Find..."      
+      search_string: "Search..."
+      
 
   number:
     currency:
       format:
-        unit: '$'
+        unit:     '$'
         precision: 2
-        format: "%u %n"
+        format:    "%u %n"
 
-  store:
-    index:
-      price_html: "Price: "
-      title_html: "Your Pragmatic Catalog"
-      add_html:   "Add to Cart"
-      price_html: "Price: "
-      product_details: "Product details:"
+  store:    
+    title:
+      title_html: "Your Pragmatic Catalog"    
+    product:
+      price_html:      "Price: "      
+      add_html:        "Add to Cart"
+      price_html:      "Price: "
+      product_details: "Product details:"      
 
   products:
     show:
@@ -51,7 +57,7 @@ en:
       price_html: "Price: "
     show_not_signed:
       price_html:      "Price: "
-      product_details: "Product details:"
+      product_details: "Product details:"    
     
   carts:
     cart:
@@ -70,16 +76,17 @@ en:
       delete_item: "Delete"
 
   orders:
+    name:            "Name"
+    address_html:    "Address"
+    email:           "E-mail"
+    pay_type:        "Pay with"
+    pay_prompt_html: "Select a payment method"
+    submit:          "Place Order"
+    
     new:
       legend: "Please Enter Your Details"
 
-    form:
-      name:         "Name"
-      address_html: "Address"
-      email:        "E-mail"
-      pay_type:     "Pay with"
-      pay_prompt_html: "Select a payment method"
-      submit:       "Place Order"
+    
 
     payment_types:
       check:          "Check"

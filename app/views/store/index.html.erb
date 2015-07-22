@@ -2,66 +2,31 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 
+<%= render 'title' %>
 
-<!-- <h1>Your Pragmatic Catalog</h1> -->
-  <table border="0" width="100%">
-  <tr>
-    <td> <h1><%= t('.title_html') %></h1> </td>
-    <td align = "right">
-      <!--   Форма поиска -->
-      <%= form_tag request.path, :method => 'get' do %>
-        <%= text_field_tag :search, params[:search],class: 'style-1',
-                     :placeholder => "search sting..."%>
-        <%= submit_tag 'Find...', :name => nil %>
-      <% end %>
-    </td>
-  </tr>
-  </table>
-<!-- ************************************************************* -->
+<% @products = Product.search(params[:search]).order(:title) %>
 
-
-  <% @products = Product.search(params[:search]) %>
+<p>
+  <% unless params[:search]== '' %>
   <% if @products.count > 0 %>
-       По запросу <strong>" <%= params[:search] %> "</strong>
-       найдено <%= pluralize(@products.count, 'product') %> :
+     По запросу <strong>" <%= params[:search] %> "</strong>
+     найдено <%= pluralize(@products.count, 'product') %> :
   <% else%>
-       Your search returned no results. Try changing your query.
+     Your search returned no results. Try changing your query.
   <% end%>
+  <% end%>
+</p>
 
-  <% @products = @products.paginate(page: params[:page], per_page: 3) %>
-  <div class="apple_pagination store_pag">
-    <%= will_paginate @products %>
-  </div>
+<% @products = @products.paginate(page: params[:page], per_page: 3) %>
+<div class="apple_pagination store_pag">
+  <%= will_paginate @products %>
+</div>
 
+<%= render 'product' %>
+<hr />
 
-  <% @products.each do |product| %>
-    <div class="entry">
-      <hr />
-      <h3> <%= product.title %> </h3>
-      <%= image_tag(product.image_url) %>
-      <p> <%= sanitize(product.description) %> </p>
-      <%= link_to t('.product_details'), product %><br/>
-        <div class="price_line">
-        <table border="0">
-          <tr>
-            <td>
-              <span class="price">
-<!--              Price: <%#= number_to_currency(product.price, unit: "₴", format: "%n %u") %> -->
-                  <%= t('.price_html') + number_to_currency(product.price) %>
-              </span>
-            </td>
-            <td width="150px" align="right">
-<!--           <%#= button_to( 'Add to Cart', line_items_path(product_id: product), remote: true) %> -->
-               <%= button_to( t('.add_html'), line_items_path(product_id: product), remote: true) %>
-            </td>
-          <tr>
-        </table>
-        </div>
-    </div>
-  <% end %>
-  <hr />
-  <div class="apple_pagination store_pag" >
-    <%= will_paginate @products %>
-  </div>
+<div class="apple_pagination store_pag" >
+  <%= will_paginate @products %>
+</div>
 
 
