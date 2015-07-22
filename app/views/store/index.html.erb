@@ -19,11 +19,20 @@
   </table>
 <!-- ************************************************************* -->
 
-  Total products in store - <%= @products.count%>
+
+  <% @products = Product.search(params[:search]) %>
+  <% if @products.count > 0 %>
+       По запросу <strong>" <%= params[:search] %> "</strong>
+       найдено <%= pluralize(@products.count, 'product') %> :
+  <% else%>
+       Your search returned no results. Try changing your query.
+  <% end%>
+
   <% @products = @products.paginate(page: params[:page], per_page: 3) %>
   <div class="apple_pagination store_pag">
     <%= will_paginate @products %>
   </div>
+
 
   <% @products.each do |product| %>
     <div class="entry">

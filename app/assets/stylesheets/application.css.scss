@@ -66,6 +66,8 @@
 
 /* конец баннера */
 
+
+
 #notice {
  color: #000 !important;
  border: 2px solid red;
@@ -159,6 +161,7 @@
    }
 }
 
+
 /* Для вывода отладочной инофрмации */
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -237,7 +240,7 @@
 }
 
 
-/* ------ Таблица заказов ----- */
+/* --------- Таблица заказов ------------ */
 #table_orders{
   td {
     padding: 0px;
@@ -247,20 +250,20 @@
   }
 }
 
-/* стиль для полей поиска */
+/* ------- стиль для полей поиска --------*/
 input.search{
           border: 1px solid #cccccc; //цвет рамки
-   border-radius: 5px;         //закругление углов (общее)
-   -webkit-border-radius: 3px; //закругление углов (Google Chrome)
-      -moz-border-radius: 3px; //закругление углов (FireFox)
-    -khtml-border-radius: 3px; //закругление углов (Safari)
+   border-radius: 5px;              //закругление углов (общее)
+   -webkit-border-radius: 3px;     //закругление углов (Google Chrome)
+      -moz-border-radius: 3px;    //закругление углов (FireFox)
+    -khtml-border-radius: 3px;   //закругление углов (Safari)
    background: #ffffff !important; // желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым
-      outline: none;    // удаляет обводку в браузерах хром(желтая) и сафари(синяя)
-       height: 1.5em;    // высота на свое усмотрение
-        width: 12em;   // ширина на свое усмотрение
-        color: #cc1ccc; //цвет шрифта в обычном состоянии
-    font-size: 1em;    // Размер шрифта
-  font-family: Vernada;  // Стиль шрифта
+      outline: none;              // удаляет обводку в браузерах хром(желтая) и сафари(синяя)
+       height: 1.5em;            // высота на свое усмотрение
+        width: 12em;            // ширина на свое усмотрение
+        color: #cc1ccc;        //цвет шрифта в обычном состоянии
+    font-size: 1em;           // Размер шрифта
+  font-family: Vernada;      // Стиль шрифта
     transition: box-shadow 0.3s, border 0.3s;
 }
 
@@ -274,4 +277,3 @@ input.search{
   border: solid 1px #707070;
   box-shadow: 0 0 5px 1px #969696;
 }
-

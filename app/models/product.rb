@@ -26,6 +26,8 @@ class Product < ActiveRecord::Base
 					message: 'URL must be GIF, JPG or PNG format.' }
 # -----------------------------------------------------------------------------
 
+
+  
 #   для кеширования товаров, которые были изменены
   def self.latest
     Product.order(:updated_at).last
