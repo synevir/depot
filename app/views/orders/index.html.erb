@@ -3,8 +3,20 @@
 <% end %>
 
 <h1>Listing Orders</h1>
+<p>
+<%= form_tag request.path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search], class: 'style-1',
+                     :placeholder => "search by name..."%>
+  <%= submit_tag 'Find', :name => nil %>
+<% end %>
+</p>
 
-<table>
+<% @orders = @orders.paginate(page: params[:page], per_page: 10) %>
+<div class="apple_pagination product_pag">
+  <%= will_paginate %>
+</div>
+
+<table id = "table_orders">
   <thead>
     <tr>
       <th>Name</th>

@@ -31,6 +31,14 @@ class Product < ActiveRecord::Base
     Product.order(:updated_at).last
   end
 
+  def self.search(search_pattern)
+	 if search_pattern
+      where('title LIKE ?', "%#{search_pattern}%")
+    else
+      all
+    end
+  end
+
   private
 #   убеждаемся в отсутствии товарных позиций, ссылающихся на данный товар
     def ensure_not_referenced_by_any_line_item

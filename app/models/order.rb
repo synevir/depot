@@ -21,6 +21,14 @@ class Order < ActiveRecord::Base
 	line_items.to_a.sum { |item| item.total_price }
   end
 
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      all
+    end
+  end
+
 
 
 end
