@@ -1,4 +1,4 @@
-$(document).on "ready page:change", ->
+$(document).on "page:change", ->
   $('.store .entry > img').click ->
     $(this).parent().find(':submit').click()
 
