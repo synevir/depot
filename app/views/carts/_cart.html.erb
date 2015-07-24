@@ -13,7 +13,7 @@
   <%= render(cart.line_items) %>
   <tr class="total_line">
     <td colspan="2"> <%= t('.cart_table_total') %></td>
-    <td colspan="2"id="total_cell" align="center">
+    <td colspan="2" id="total_cell" align="center">
       <%= number_to_currency(cart.total_price, delimiter: " ", format: "%n %u")%>
     </td>
 

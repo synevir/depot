@@ -8,13 +8,13 @@ ua:
         order:
           attributes:
             name:
-                too_short: "- дуже коротке ім\'я "              
+                too_short: "- дуже коротке ім\'я "
             email:
-                invalid:   "- помилковий формат eлектронної скрині"                
+                invalid:   "- помилковий формат eлектронної скрині"
             pay_type:
                 inclusion: "- потрiбно обрати засiб оплати"
-                         
-      messages:        
+
+      messages:
         too_short: "- дуже коротка"        
         blank:     "- не може бути пустим"
 
@@ -44,7 +44,7 @@ ua:
       login:      "Вхiд"
     form_search:
       find:          "Знайти"
-      search_string: "Шукати..."  
+      search_string: "Шукати..."
 
   number:
     format:
@@ -56,17 +56,17 @@ ua:
         precision: 2
         format:   "%n %u"
 
-  store:    
+  store:
     title:
-      title_html: "Tвiй прагматичний каталог"    
+      title_html: "Tвiй прагматичний каталог"
     product:
-      price_html:      "Цiна: "      
+      price_html:      "Цiна: " 
       add_html:        "Додати до кошика"
-      product_details: "Докладний опис"      
-  
+      product_details: "Докладний опис"
+
   products:
     show:
-      title_product_details: "Детальна інформація"      
+      title_product_details: "Детальна інформація"
     show_if_signed:
       price_html: "Вартiсть: "
     show_not_signed:
@@ -84,19 +84,19 @@ ua:
       cart_table_items:   "к-сть"
       cart_table_summ:    "Сума"
       cart_table_total:   "Загалом:"
-      
+
   line_items:
     line_item:
       delete_item: "Видалити"
 
-  orders:    
+  orders:
     name:            "Iм`я"
     address_html:    "Адреса доставки"
     email:           "E-mail"
     pay_type:        "Засiб сплати"
     submit:          "Вiдправити заказ"
     pay_prompt_html: "Оберiть засiб сплати"
-    
+
     new:
       legend: "Будь ласка, заполнiть форму"
 
@@ -108,7 +108,7 @@ ua:
 
 
   thanks: "Дякуємо за Ваше замовлення"
-  
+
   will_paginate:
      previous_label: "&#8592; Попередня"
      next_label:     "Наступна &#8594;"
