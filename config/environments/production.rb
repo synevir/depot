@@ -8,8 +8,8 @@ Rails.application.configure do
       port:           110,
       domain:         "domain.of.sender.net",
       authentication: "login",
-      user_name:      "depot@myphpdevelop.zz.mu",
-      password:       "mkr7DmLFpMU3",
+      user_name:      ENV['user_name'],
+      password:       ENV['password'],
       enable_starttls_auto: true
     }
 
