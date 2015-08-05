@@ -1,6 +1,6 @@
 namespace :db do
   desc "Add to database products"
-  task create_admin: :environment do
+  task filling_store: :environment do
 	product1 = Product.create!(
 	  title:       "Let us C++ ",
       description: "language C with objects ",
