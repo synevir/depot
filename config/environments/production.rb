@@ -2,14 +2,13 @@ Rails.application.configure do
 
   Depot::Application.configure do
     config.action_mailer.delivery_method = :smtp
-
     config.action_mailer.smtp_settings = {
-      address:        "mx1.hostinger.com.ua",
-      port:           110,
-      domain:         "domain.of.sender.net",
-      authentication: "login",
-      user_name:      ENV['user_name'],
-      password:       ENV['password'],
+      address:              ENV['SMTP_ADDRESS'],
+      port:                 ENV['SMTP_PORT'],
+      domain:               'domain.of.sender.net',
+      authentication:       'plain',
+      user_name:            ENV['SMTP_USER_NAME'],
+      password:             ENV['SMTP_PASSWORD'],
       enable_starttls_auto: true
     }
 
