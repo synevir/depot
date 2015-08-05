@@ -7,7 +7,7 @@ Rails.application.configure do
       port:                 ENV['SMTP_PORT'],
       domain:               'domain.of.sender.net',
       authentication:       'plain',
-      user_name:            ENV['SMTP_USER_NAME'],
+      user_name:            ENV['SMTP_USER'],
       password:             ENV['SMTP_PASSWORD'],
       enable_starttls_auto: true
     }
