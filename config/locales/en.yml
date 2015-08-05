@@ -20,6 +20,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    models:
+      order: "order"
+      
+  errors:
+    template:
+      body: "Fields with errors:"
+      header:
+        one:   "1 error in filling forms %{model}"
+        other: "%{count} errors in filling forms %{model}"
+
   layouts:    
     application:
       title:     "Pragmatic Bookshelf"
