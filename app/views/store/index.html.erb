@@ -7,14 +7,14 @@
 <% @products = Product.search(params[:search]).order(:title) %>
 
 <p>
-  <% unless params[:search]== '' %>
-  <% if @products.count > 0 %>
-     По запросу <strong>" <%= params[:search] %> "</strong>
-     найдено <%= pluralize(@products.count, 'product') %> :
-  <% else%>
-     Your search returned no results. Try changing your query.
-  <% end%>
-  <% end%>
+  <% if @products.count != Product.all.count %>
+    <% if @products.count > 0 %>
+       По запросу <strong>" <%= params[:search] %> "</strong>
+       найдено <%= pluralize(@products.count, 'product') %> :
+    <% else %>
+       Your search returned no results. Try changing your query.
+    <% end %>
+  <% end %>
 </p>
 
 <% @products = @products.paginate(page: params[:page], per_page: 3) %>
