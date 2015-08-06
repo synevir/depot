@@ -44,7 +44,8 @@ class OrdersController < ApplicationController
       if @order.save
 		Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-		OrderNotifier.received(@order).deliver_later		#отправка почтового уведомления
+# 		OrderNotifier.received(@order).deliver_later		#отправка почтового уведомления сразу
+		OrderNotifier.delay.received(@order)		        #отправка cooбщения в фоновом режиме
         format.html { redirect_to store_url, notice: I18n.t('.thanks')  }
         format.json { render :show, status: :created, location: @order  }
       else
