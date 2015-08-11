@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
        redirect_to order_url(locale: params[:set_locale])
      else
 #        @orders = Order.order(:name)
-	   @orders = Order.search(params[:search])
+       @orders = Order.search(params[:search])
      end
   end
 
@@ -27,8 +27,8 @@ class OrdersController < ApplicationController
       return
     end
 
-	@order = Order.new
-	@hide_button_checkout = true
+    @order = Order.new
+    @hide_button_checkout = true
   end
 
   # GET /orders/1/edit
@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-	@order.add_line_items_from_cart(@cart)
+    @order.add_line_items_from_cart(@cart)
 
     respond_to do |format|
       if @order.save

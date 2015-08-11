@@ -2,11 +2,11 @@ class ProductsController < ApplicationController
   skip_before_action :authorize, only: [:show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_product
-  
+
   # GET /products
   # GET /products.json
   def index
- 	@products = Product.search(params[:search])
+    @products = Product.search(params[:search])
   end
 
   # GET /products/1
@@ -74,8 +74,8 @@ class ProductsController < ApplicationController
       params.require(:product).permit(:title, :description, :image_url, :price, :details)
     end
 
-	def invalid_product
-	  logger.error "Некорректный `id` продукта: #{params[:id]}"
-	  redirect_to store_path, notice: 'Такого продукта в базе нет: ' + params[:id].to_s
-	end
+    def invalid_product
+      logger.error "Некорректный `id` продукта: #{params[:id]}"
+      redirect_to store_path, notice: 'Такого продукта в базе нет: ' + params[:id].to_s
+    end
 end
