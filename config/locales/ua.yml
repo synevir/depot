@@ -81,7 +81,7 @@ ua:
       empty_confirm:      "Очистити кошик?"
       cart_table_product: "Продукт"
       cart_table_price:   "Цiна"
-      cart_table_items:   "к-сть"
+      cart_table_items:   "К-сть"
       cart_table_summ:    "Сума"
       cart_table_total:   "Загалом:"
 

@@ -1,12 +1,12 @@
 <% @products.each do |product| %>
     <div class="entry">
       <hr />
-      <h3> <%= product.title %> </h3>
+      <h2> <%= product.title %> </h2>
       <%= image_tag(product.image_url) %>
       <p> <%= sanitize(product.description) %> </p>
       <%= link_to t('.product_details'), product %><br/>
         <div class="price_line">
-        <table border="0">
+        <table id="last_line_in_product">
           <tr>
             <td>
               <span class="price">
@@ -14,9 +14,10 @@
                   <%= t('.price_html') + number_to_currency(product.price) %>
               </span>
             </td>
-            <td width="150px" align="right">
+            <td id="cell_button_add">
 <!--           <%#= button_to( 'Add to Cart', line_items_path(product_id: product), remote: true) %> -->
-               <%= button_to( t('.add_html'), line_items_path(product_id: product), remote: true) %>
+               <%= button_to( t('.add_html'), line_items_path(product_id: product),
+                              class: "btn btn-sm btn-primary", remote: true) %>
             </td>
           </tr>
         </table>

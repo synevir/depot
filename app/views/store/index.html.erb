@@ -20,12 +20,14 @@
 </p>
 
 <% @products = @products.paginate(page: params[:page], per_page: 3) %>
-<div class="apple_pagination store_pag">
+<div class="apple_pagination">
   <%= will_paginate @products %>
 </div>
 
-<%= render 'product' %>
-<hr />
+<div class="jumbo">
+  <%= render 'product' %>
+  <hr />
+</div>
 
 <div class="apple_pagination store_pag" >
   <%= will_paginate @products %>

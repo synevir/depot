@@ -6,17 +6,17 @@
 
   <td><%= line_item.product.title %></td>
   <td class="item_price">
-          <%= number_to_currency(line_item.product.price, unit: "", delimiter: " ",
-								format: "%n %u") %>
+      <%= number_to_currency(line_item.product.price, unit: "", delimiter: " ",	format: "%n %u") %>
   </td>
   <td class="quantity"> <%= line_item.quantity %>&times;</td>
   <td class="item_price" align="right" nowrap>
-          <%= number_to_currency(line_item.total_price, delimiter: " ",
-								format: "%n %u")%>
+      <%= number_to_currency(line_item.total_price, delimiter: " ", format: "%n %u")%>
   </td>
 <!--   условие добавлено для унификации шаблона при генерации почтового сообщения -->
   <% if @order.nil? %>
-      <td> <%= button_to( t('.delete_item'), line_item, method: :delete ) %>
+      <td id="delete_cell">
+          <%= button_to( t('.delete_item'), line_item, method: :delete,
+                      class: "btn btn-xs" ) %>
       </td>
   <% end %>
 </tr>

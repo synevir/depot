@@ -1,7 +1,11 @@
  <!-- ______ Форма поиска _______ -->
 
-<%= form_tag request.path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:search],class: 'style-1',
-                     :placeholder => t('.search_string')%>
-  <%= submit_tag t('.find'), :name => nil %>
+<%= form_tag request.path, class: "form-search", :method => 'get' do %>
+<div class="input-group">
+    <%= text_field_tag :search, params[:search], class: 'form-control',
+                       :placeholder => t('.search_string')%>
+    <span class="input-group-btn">
+      <%= submit_tag t('.find'),class: "btn", :name => nil %>
+    </span>
+</div>
 <% end %>
