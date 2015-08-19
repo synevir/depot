@@ -3,7 +3,7 @@
 <% end %>
 
     <div class="entry">
-      <h3><%= @product.title %></h3>
+      <h2><%= @product.title %></h2>
       <hr />
       <%= image_tag(@product.image_url) %>
         <p> <%= sanitize(@product.description) %> </p>
@@ -13,7 +13,6 @@
           <tr>
             <td>
               <span class="price">
-<!--              Price: <%#= number_to_currency(product.price, unit: "₴", format: "%n %u") %> -->
                   <%= t('.price_html') + number_to_currency(@product.price) %>
               </span>
             </td>
@@ -23,8 +22,8 @@
         </table>
 
 		<hr />
-        <table border="0">
-          <tr><th> <%= t('.product_details') %>: </th></tr>
+        <table id="product_details_table">
+          <tr><th> <%= t('.product_details') %> </th></tr>
           <tr>
             <td> <%= sanitize(@product.details) %> </td>
           </tr>
@@ -34,4 +33,3 @@
                      style: 'width: 9em;'  %><br/>
         </div>
     </div>
-

@@ -3,24 +3,26 @@
 <% end %>
 
 <h1>Listing Products</h1>
+<br>
 
-<p> <%= render 'layouts/form_search' %> </p>
-
+<%= render 'layouts/form_search' %>
+<br>
 Total products in store - <%= @products.count%>
+<br>
 <% @products = @products.paginate(page: params[:page], per_page: 3) %>
-<div class="apple_pagination product_pag">
+<div class="apple_pagination product_pag admin-pag">
   <%= will_paginate %>
 </div>
+<br>
 
-
-<table border="0">
+<table border="0" >
 
 <% @products.each do |product| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
 	<td>
 	  <%= image_tag(product.image_url, class: 'list_image') %>
 	</td>
-	<td class="list_description">
+	<td class="list_description" >
 	  <dl>
         <dt><%= product.title %></dt>
 		  <dd><%= truncate(strip_tags(product.description), length: 80) %></dd>
@@ -35,10 +37,10 @@ Total products in store - <%= @products.count%>
 <% end %>
 
 </table>
-
 <br>
 
-<%= link_to 'Add New Product', new_product_path %>
-<div class="apple_pagination">
+<div class="apple_pagination admin-pag">
 	<%= will_paginate %>
 </div>
+<br>
+<%= link_to 'Add New Product', new_product_path, class: "btn btn-warning" %>

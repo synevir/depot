@@ -3,12 +3,14 @@
 <% end %>
 
 <h1>Listing Orders</h1>
-<p>
-  <%= render 'layouts/form_search' %>
-</p>
+<br>
+
+<%= render 'layouts/form_search' %>
+<br>
 
 <% @orders = @orders.paginate(page: params[:page], per_page: 20) %>
 <div class="apple_pagination product_pag">
+
   <%= will_paginate %>
 </div>
 
@@ -30,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to 'New Order', new_order_path, class: "btn btn-warning" %>

@@ -4,7 +4,11 @@
   <tr>
 <% end %>
 
-  <td><%= line_item.product.title %></td>
+  <td>
+  <div style="overflow:hidden; width: 8em;">
+     <%= line_item.product.title %>
+  </div>
+  </td>
   <td class="item_price">
       <%= number_to_currency(line_item.product.price, unit: "", delimiter: " ",	format: "%n %u") %>
   </td>
@@ -14,7 +18,7 @@
   </td>
 <!--   условие добавлено для унификации шаблона при генерации почтового сообщения -->
   <% if @order.nil? %>
-      <td id="delete_cell">
+      <td class="delete_cell">
           <%= button_to( t('.delete_item'), line_item, method: :delete,
                       class: "btn btn-xs" ) %>
       </td>

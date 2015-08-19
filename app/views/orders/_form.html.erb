@@ -2,8 +2,8 @@
   <% if @order.errors.any? %>
     <div id="error_explanation">
 <!--  <h2><%#= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2> -->
-      <h2><%=raw t('errors.template.header', count: @order.errors.count,
-                   model: t('activerecord.models.order')) %>.</h2>
+      <h2> <%=raw t('errors.template.header', count: @order.errors.count,
+                   model: t('activerecord.models.order')) %>. </h2>
        <p><%= t('errors.template.body') %></p>
 
       <ul>
@@ -14,30 +14,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name, t('orders.name') %>
-    <%= f.text_field :name, size: 40 %>
-  </div>
-  <hr />
-  <div class="field">
-    <%= f.label :address, t('orders.address_html') %>
-    <%= f.text_area :address, rows: 3, cols: 40 %>
-  </div>
-  <div class="field">
-    <%= f.label :email, "E-mail" %><br>
-    <%= f.text_field :email, size: 40 %>
-  </div>
-  <hr />
-  <div class="field">
-    <%#= f.label :pay_type, "Pay type:" %><br>
-    <%= f.label :pay_type, t('orders.pay_type') %>
-    <%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'Select a payment method' %>
-    <%#= f.select :pay_type, payment_type_options, prompt: t('.pay_prompt_html')%>
+  <div class="input-group">
+    <span class="input-group-addon">
+      <%= f.label t('orders.name'), id:"label_name" %>
+<!-- если нужна привязка label к полю:
+<%#= f.label :name t('orders.name'), id:"label_name" %>  -->
+    </span>
+    <%= f.text_field :name, size: 40, class: 'form-control' %>
   </div>
 
-  <p>
-  <div class="actions">
-    <%= f.submit t('orders.submit') %>
+  <div class="input-group">
+    <span class="input-group-addon">
+      <%= f.label t('orders.address_html') %>
+    </span>
+    <%= f.text_area :address, rows: 3, cols: 40, class: 'form-control' %>
   </div>
-  <p>
+
+  <div class="input-group">
+    <span class="input-group-addon">
+      <%= f.label "E-mail" %>
+    </span>
+    <%= f.text_field :email, size: 40, class: 'form-control' %>
+  </div>
+<!--   <hr /> -->
+
+  <div class="input-group">
+    <span class="input-group-addon">
+      <%= f.label t('orders.pay_type') %>
+    </span>
+    <%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: t('orders.pay_prompt_html') %>
+    <%#= f.select :pay_type, payment_type_options, prompt:'Select a payment method' %>
+  </div>
+
+  <hr />
+  <div class="actions">
+    <%= f.submit t('orders.submit'), class:"btn btn-primary" %>
+  </div>
+
 <% end %>

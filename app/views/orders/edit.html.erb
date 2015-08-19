@@ -2,10 +2,9 @@
 
 <%= render 'form' %>
 
-<p>
-  <strong>Items:</strong>
-  <%= render @order.line_items %>
-</p>
-
+<strong>Items:</strong>
+<%= render @order.line_items %>
+<br>
+<br>
 <%= link_to 'Show', @order %> |
 <%= link_to 'Back', orders_path %>

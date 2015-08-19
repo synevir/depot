@@ -1,72 +1,293 @@
 @import "bootstrap";
 
+html, body, div, span, applet,
+h1, h2, h3, h4, h5, h6, p, blockquote,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary {
+  margin:    0;
+  padding:   0;
+  border:    0;
+  font-size: 100%;
+  font:      inherit;
+  vertical-align: baseline;
+}
+
+html body{
+  height: 100%;
+  width:  100%;
+}
+
 body {
-	margin: 3px;
+  line-height: 1;
+  margin:      3px;
 }
 
-/* ---------- nav-menu --------- */
-/* ---------- bootstrap -------- */
-#nav_shared {
-  width:  90%;
-  color:  red;
-  border: solid 2px yellow;
-  margin: 2px;
-  background-color:#990066;
-  float:  none;
+.wrapper {
+  min-width:  1000px;
+  min-height: 100%;
+  height:     auto;
 }
 
 
-#nav_admin {
-  width:  90%;
-  color:  #337AB7;
-  margin: 2em;
-  #btn_logout{
-    margin: 11px;
+
+/* баннер
+---------------------------------------------- */
+#banner {
+  width: 99%;
+  background: #9c9;
+  padding:    10px;
+  font:       small-caps 40px/40px "Times New Roman", serif;
+  color:      #282;
+  text-align: center;
+  border-bottom: 2px groove;
+  border-right:  2px groove;
+  img { float: left; }
+}
+
+.locale {
+   float: right;
+  margin: -0.25em 0.1em;
+}
+
+.selectpicker { font-size: 19px;}
+
+/* конец баннера */
+
+
+/* Middle
+-----------------------------------------------------------------------------*/
+.middle {
+  width:   100%;
+  padding: 0 0 0px 0;
+  position: relative;
+  height:   100%;
+
+}
+.middle:after {
+  display: table;
+	clear: both;
+  content: '';
+}
+.container {
+     width: 100%;
+     float: left;
+  overflow: hidden;
+   padding: 0 0px 0 5px;
+/*    border: dotted 5px blue; */
+}
+
+#product_details_table {
+  margin-bottom: 1em;
+  th { font-weight: bold;}
+  td {
+	height: 100%;
+    border: 0px solid red;
+	li { margin: 0.5em 0 0 2em; }
   }
 }
 
-ul {
-    float:       left;
-    list-style:  none;
-  	border:      solid 1px red;
-	margin:      1.5em 2em 0 0;
-	font-weight: bold;
-    li {
-      float: left;
+
+
+#columns {
+  background: #141;
+/*   	border: solid 5px red; */
+  height: 100%;
+  width: 99%;
+  a { font: 1.2em/1.2em "DejaVu", serif; }
+
+/*--------------   Store  ------------- */
+  #main {
+   /* .narrow { margin-left:  35%; }
+    .wide   { margin-left:  25%; }*/
+    margin-left:  33%;
+	height:       99%;
+/*  	border:       solid 3px yellow; */
+ 	padding-top:  0.5em;
+	padding-left: 0.8em;
+    background:   white;
+
+	h1 {
+      font: 33px/33px "Palatino Linotype", serif;
+	  font-weight: bold;
+	}
+    .entry {
+	  background:     #f1f1f1;
+	  padding-left:   1.5em;
+	  padding-bottom: 1em;
+	  border:         solid 1px #E8E8E8;
+	  margin-top:     6px;
+	  margin-bottom:  6px;
+/*  `YES` Style  */
+	  background-color:   #f1f1f1;/*#FE390F*/
+	  padding-top:        3px;
+	  padding-right:      0px;
+	  padding-bottom:     3px;
+      -webkit-box-shadow: 0px 0px 10px #4d4d4d;
+      -moz-box-shadow:    0px 0px 10px #4d4d4d;
+      box-shadow:         0px 0px 10px #4d4d4d;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+	  border:             1px solid rgba(65, 91, 42, 0.5);
+/*  `YES`  end CSS */
+
+      hr {
+		margin: 2px 10px 10px 0;
+		height: 1px;
+		background-color: black;
+/* 		padding-right: 100px; */
+	  }
+	  h2 {
+		font:  small-caps 30px/30px "Times New Roman", serif;
+		margin:  5px 0;
+		padding: 15px 0 5px 0;
+	  }
+	  h3 {
+		font:  small-caps 24px/24px "Times New Roman", serif;
+		margin:  5px 0;
+		padding: 15px 0 5px 0;
+	  }
+	  strong {font-weight: bold;}
+	  img, p {margin: 8px 0;}
+	  img {
+		border: groove 5px #f1f1f1;
+		border-radius: 8px;
+		&:hover{ border: groove 6px #f1f1f1;}
+	  }
+	  a {
+		padding: 5px 0;
+		margin:  5px 0;
+	  }
+	  a.a_details {
+		padding: 5px 0;
+		margin:  5px 0;
+        font:    21px/21px "DejaVu", serif;
+		font-weight: normal;
+
+		text-decoration: underline;
+		&:hover {color: maroon;}
+	  }
+      .last_line_in_product{
+		margin:  5px 0;
+        td {
+ 	      border:    solid 0px red;
+          padding:   0.5em 0;
+		  margin:    0.5em 0;
+	      font-size: 18px;
+        }
+        .cell_button_add { padding-left: 1em;}
+      }
     }
+  }
+  /*--- end of store ----*/
+
+/* Left Sidebar
+-----------------------------------------------------------------------------*/
+  .left-sidebar {
+  	width:  450px;
+/* 	height: 500px; */
+	float:  left;
+	margin-left: -100%;
+	position:    relative;
+	background:  #B5E3FF;
+  }
+
+  #side {
+    /*.side-snarrow { width: 25%;}
+    .side-wide   { width: 35%;}*/
+    width:   33%;
+	height:  100%;
+    float:   left;
+    padding: 1em 1em;
+    background: #141;  /*dark-green*/
+/*  	border:  solid 3px blue; */
+
+	form  { display: inline;  }
+	input { font-size: small; }
+
+	#cart {
+/*       border:    solid 3px maroon; */
+	  color:     white;
+	  font-size: smaller;
+	  height:    auto;
+	  width:     99%;
+	  .btn {
+        color:        black;
+        padding-left:  10px;
+        padding-right: 10px;
+	    &:hover, &:focus { background-color: #FFDEAD;}
+      }
+      .btn-100 { width: 112px; }
+    }
+
+  } /*side*/
+}  /*columns*/
+
+
+/* ---------- nav-menu --------- */
+/* ---------- bootstrap -------- */
+#nav_shared, #nav_admin {
+  width: 220px;
+/*   color: #337AB7; */
+  a {
+	color: white;
+	&:hover{background-color: maroon;}
+  }
+  .btn-lg{ width: 110px;}
 }
+
+#btn_logout, #btn_login {
+  margin: 11px;
+  &:hover, &:focus {
+ 	background-color: #80c780;
+ 	color: white;/*#337AB7;*/
+  }
+}
+
+/* #nav_shared {border: solid 1px red;} */
+/* #nav_admin { outline: dotted 5px maroon;} / */
 /* ---------- bootstrap ---------- */
 /* -------- end nav-menu ----------*/
 
 
 
 
-/* ---- стиль для пагинации ------*/
-/*--------------------------------*/
+/*   стиль для пагинации
+--------------------------------------------------------*/
+
+/*.apple_pagination {  /*заменено на `.pagination` после подключения bootstrap   */
 .pagination {
-	margin:7px;  /*переопределение базовой пагинации `bootstrap`*/
-	border-radius: 5px;
-}
-.apple_pagination {
+  width:      100%;
+  height:     35px;
   background: #f1f1f1;
-  border:     1px solid #e5e5e5;
-  border-bottom: 1px solid black;
- /* border-top: 1px solid black;*/
-  border-right: 1px solid black;
   text-align: right;
-  padding:    1px;
+  padding:    4px 10px 1px 0px;
+  margin:     1px 1px 1px 0;
   cursor:     default;
-  a, span {
-    padding: 0.2em 0.3em;
+  border-bottom: 1px solid black;
+  border-right:  1px solid black;
+
+  a, span { padding: 0.2em 0.3em; }
+  a {
+	color:           black;
+    text-decoration: none;
+    &:hover, &:focus { text-decoration: underline; }
   }
-  .disabled {
-    color: #aaaaaa;
-  }
+  span{ padding-top: 4em;}
+
+  .disabled { color: #aaaaaa; }
   .current {
-    font-style:       normal;
-    font-weight:      bold;
     background-color: #bebebe;
-    display:          inline-block;
+    font-style:  normal;
+    font-weight: bold;
+    display:     inline-block;
     width:       1.4em;
     height:      1.4em;
     line-height: 1.5em;
@@ -75,262 +296,206 @@ ul {
     border-radius:         1em;
     text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
   }
-  a {
-    text-decoration: none;
-    color:           black;
-    &:hover, &:focus {
-      text-decoration: underline;
-    }
-  }
+/*  `YES` Style  */
+	  background-color:   #f1f1f1;/*#FE390F*/
+	  padding-top:        3px;
+	  padding-right:      0px;
+	  padding-bottom:     3px;
+      -webkit-box-shadow: 0px 0px 5px #4d4d4d;
+      -moz-box-shadow:    0px 0px 5px #4d4d4d;
+      box-shadow:         0px 0px 5px #4d4d4d;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+	  border:             1px solid rgba(65, 91, 42, 0.5);
+/*  `YES`  end CSS */
+
+
 }
 
-.store_pag{
-	margin: -0.5em 0;
-  }
+.store_pag   { margin: -0.5em 0 0.1em 0; }
+.product_pag { margin: 0.2em 0;  }
+.admin-pag {
+  border-bottom: 0px groove black;
+  border-right:  0px groove black;
+  border: solid 1px black;
+}
 
-.product_pag{
-  margin: 0.2em 0;
-  }
 /* конец пагинации */
 
-
-/* -------------- баннер ----------------- */
-#banner {
-  background: #9c9;
-  padding: 10px;
-  border-bottom: 3px solid;
-  border-right: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
-  text-align: center;
-
-  img {
-    float: left;
-  }
-
-}
-
-.locale {
-  float: right;
-  margin: -0.25em 0.1em;
-}
-
-.selectpicker {
-  font-size: 19px;
-}
-
-/* конец баннера */
 
 
 
 #notice {
- color: #000 !important;
- border: 2px solid red;
- padding: 1em;
- margin-bottom: 2em;
+	color: #000 !important;
+	 font: bold smaller sans-serif;
+   border: 2px solid red;
+  padding: 1em;
+    margin-bottom: 2em;
  background-color: #f0f0f0;
- font: bold smaller sans-serif;
 }
-
-#columns {
-  background: #141;
-   border: solid 5px red;
-  a {
-    font: 1.2em/1.2em "DejaVu", serif;
-  }
-
-  #main {
-    margin-left: 35%;
-    padding: 1em;
-    background: white;
-	border: solid 3px yellow;
-  }
-
-  #side {
-    float: left;
-    padding: 1em 2em;
-    width: 35%;
-    background: #141;
-	border: solid 3px blue;
-
-	form {
-	  display: inline;
-	}
-	input {
-	  font-size: small;
-	}
-
-	#cart {
-      border: dotted 3px black;
-	  font-size: smaller;
-	  color: white;
-	  .btn{
-	    color: black;
-	    /*width: 5em;
-	    height: 1.5em;*/
-	    padding-left: 10px;
-	    padding-right: 10px;
-	  }
-	}
-
-	table {
- 	  /*border-top: 1px dotted #595;
-	  border-bottom: 1px dotted #595;*/
-	  margin-bottom: 10px;
-	}
-  }
-}
-
-
-/*--------------   Store  ------------- */
-h1 {
-  font: 35px/35px "Palatino Linotype", serif;
-}
-
-h2 {
-  font: 30px/30px "Times New Roman", serif;
-}
-
-.entry{
-  hr {
-	margin: 5px;
-  }
-  background: #f1f1f1;
-  #last_line_in_product{
-    td {
- 	  border: solid 0px red;
-      padding-top: 0.5em;
-	  font-size: 18px;
-    }
-    #cell_button_add {
-      padding-left: 1em;
-    }
-  }
-}
-
-
 
 #date {
-  border-bottom: 2px solid;
-   border-color: red;
-          color: #9c9;
-          width: 100%;
-     text-align: center;
+/*       margin:0 auto; */
+  text-align: center;
+       color: #9c9;
+       width: 95%;
+	 padding: 10px;
+border-bottom-color: #9c9;
+border-bottom-style: solid;
+border-bottom-width: 3px;
+/*         border: solid maroon; */
 }
-
 
 
 /* ------------ Корзина -------------- */
 
 .h3_cart{
   font: "DejaVu";
+  font-size: 1.5em;
   font-weight: bold;
+  margin: 0.83em 0;
 }
+
 #cart_table {
-  width: 95%;
+/*   border: solid 0px blue; */
+  margin-bottom: 10px;
+  width:         100%;
+
   th {
     color:       #282;
     font-size:   18px;
-	padding:     3px;
+	padding:      3px;
 	white-space: nowrap;
   }
-  td{
-	  font-size:   14px;
+  td {
+	font-size:     14px;
 	padding-bottom: 5px;
  	border: solid 0px red;
   }
   .total_cell {
      text-align:  right;
      border-top:  1px solid;
+	 padding-top: 2px;
 	 font-weight: bold;
 	 font-size:   14px;
 	 font: "DejaVu", serif;
   }
-  .item_price {
-    text-align: right;
-  }
-  .quantity{
-    text-align: center;
-   }
-  #delete_cell{
+
+  .item_price { text-align: right;  }
+  .quantity   { text-align: center; }
+  .delete_cell {
+	width:          5em;
 	padding-left: 1.5em;
-	width: 5em;
-	.btn{
-	  color: black;
-	  /*width: 5em;
-	  height: 1.5em;*/
-	  padding-left: 10px;
-	  padding-right: 10px;
-	}
   }
-
 }
-
-
-
-/* Для вывода отладочной инофрмации */
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
-
 
 
 /* ------- форма заказа ---------------*/
 
 .depot_form {
-
+  height: 650px;
   fieldset {
-	background: #9c9;
+ 	background: #9c9;
+	border:     groove 2px #CFCFCF;
+	padding:    0 0 1em 0;
+	margin:     0 0 10em 0;
     legend {
-        color: #dfd;
-        background: #141;
+        color:       #dfd;
+        background:  #337AB7;
         font-family: sans-serif;
-        padding: 0.2em 1em;
+        padding:     0.5em 1em;
+		width:       40%;
+		margin-left: 1em;
     }
   }
-
   form {
     label {
-      width: 6em;
-      float: left;
-      text-align: right;
-      padding-top: 0.2em;
+      width:        5em;
+      float:        left;
+      text-align:   left;
+      padding-top:  0.2em;
       margin-right: 0.1em;
-      display: block;
+	  margin-left:  0.2em;
+      display:      block;
     }
-    select, textarea, input {
-      margin-left: 0.5em;
-    }
-    .submit {
-      margin-left: 4em;
-    }
-    br {
-      display: none
-    }
-    hr{
-	  width: 29em;
-	  text-align: left;
-	  margin-left: 0;	/*без маргина text-align не срабатывает */
+    select, textarea, input { font-size: 16px; }
+    br { display: none }
+    hr {
+	  width:       95%;
+	  text-align:  left;
+	  margin:      0;
+	  margin-left: 1em;	/*без маргина text-align не срабатывает */
 	}
+	select {margin-left: 1em;}
+	.submit { margin-left: 4em; }
+	.input-group {
+	  width:   80%;
+	  padding: 10px;
+	  .input-group-addon {
+		width:        12%;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-right: 10px;
+		white-space:  normal;
+	  }
+	}
+	.btn { margin: 1em;}
   }
 
 }
 
+#error_explanation {
+  width:   75%;
+  height:  100%;
+  display: block;
+  padding-top:    7px;
+  padding-bottom: 0px;
+  padding-left:   2px;
+  margin-top:     7px;
+  margin-bottom:  10px;
+  margin-left:    10px;
+  border-radius:  5px;
+  border: 2px groove #dfd;
+  background-color: #FFDEAD;
+  h2 {
+	border-bottom: 2px groove #dfd;
+    text-align:    left;
+	padding:       5px 5px 5px 15px;
+    font-weight:   bold;
+    font-family:   'Sans-serif';
+    font-size:     20px;
+	color:         #363636;
+    background-color: #FFDEAD;
+
+  }
+  p {
+    font-size: 16px;
+	font-family: 'Sans-serif';
+	margin: 1em 0;
+  }
+  ul{
+	border:blue 2px;
+	display: block;
+	right: auto;
+	white-space: normal;
+	margin: 1em 0em;
+	padding-left: 40px;
+	width: 100%;
+	height: 90%;
+  }
+  li {
+	float:       none;
+	line-height: 18px;
+	font-size:   16px;
+	font-weight: normal;
+	list-style-type: disc;
+  }
+}
+
 .field_with_errors {    /* выделение полей, не прошедших валидацию */
-  padding: 1px;
-  background-color: #FFA54F;
-/*   background: #FF6347; */
-  display: table;
+  background: #FFDEAD;
+	 padding: 3px;
+     display: table;
 }
 
 /* конец формы заказа */
@@ -342,13 +507,18 @@ h2 {
 
   td.border_bottom {
 	border-bottom: 1px;
-	background: #fc3;
+	background:   #fc3;
   }
 }
 
 
 /* --------- Таблица заказов ------------ */
 #table_orders{
+  margin-top: 1em;
+  th {
+	font-weight: bold;
+	padding: 5px;
+  }
   td {
     padding:        0px;
     padding-left:   0px;
@@ -392,6 +562,25 @@ input.search{
   background: #f1f1f1;
 }
 
+div.pillow {
+  height: 25%;
+  float: bottom;
+/*   border: groove; */
+}
 
 
+/* ----   Для вывода отладочной инофрмации   --- */
+@mixin box_sizing {
+  width: 99%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}

@@ -1,52 +1,44 @@
+hr{
+  color: blue;
+  margin-top: 15em;
+}
 .products {
-
-  table {
-    border-collapse: collapse;
-  }
-
+  table { border-collapse: collapse;}
   table tr td {
     padding: 5px;
     vertical-align: top;
   }
-
   .list_image {
     width: 70px;
     height: 70px;
   }
-
   .list_description {
      width: 60%;
-     dl {
-       margin: 0;
-     }
-
+     dl { margin: 0; }
      dt {
        color: #244;
        font-weight: bold;
        font-size: larger;
      }
-
-     dd {
-       margin: 0;
-     }
+     dd { margin: 0; }
   }
-
-
   .list_actions {
      font-size: x-small;
      text-align: right;
      padding-left: 1em;
   }
-
-
-  .list_line_even {
-    background: #e0f8f8;
-
-  }
-
-
-  .list_line_odd {
-     background: #e4b0f8;
-  }
+  .list_line_even { background: #e0f8f8; }
+  .list_line_odd { background: #e4b0f8; }
 }
 
+#product_details_table {
+  height: 200px;
+  border: 2px groove blue;
+  background: yellow;
+  td {
+	height: 200px;
+    border: 2px solid red;
+	background: yellow;
+  }
+
+}

@@ -5,3 +5,4 @@
                      :placeholder => t('.search_string')%>
   <%= submit_tag t('.find'), :name => nil %>
 <% end %>
+Это форма поиска

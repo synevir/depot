@@ -1,14 +1,16 @@
+<style>
+ .th-center {text-align: center; }
+</style>
 <!-- <h2>Your Cart:</h2> -->
 <h3 class="h3_cart"><%= t('.title')%></h3>
-
 <hr />
 
-<table id='cart_table' border="0">
+<table id='cart_table'>
   <tr>
 	<th> <%= t('.cart_table_product') %>  </th>
-	<th> <%= t('.cart_table_price')   %>  </th>
-	<th> <%= t('.cart_table_items')   %>  </th>
-	<th> <%= t('.cart_table_summ')    %>  </th>
+	<th class="th-center"> <%= t('.cart_table_price')   %>  </th>
+	<th class="th-center"> <%= t('.cart_table_items')   %>  </th>
+	<th class="th-center"> <%= t('.cart_table_summ')    %>  </th>
   </tr>
   <%= render(cart.line_items) %>
   <tr class="total_line">
@@ -25,11 +27,10 @@
 <!-- Вариант 1  деактивация кнопки после орисовки формы заказа -->
 <%#= button_to("Оформить заказ", new_order_path, method: :get, :disabled => !@order.nil?) %>
 <%= button_to( t('.checkout'), new_order_path, method: :get, :disabled => !@order.nil? ,
-                 class: "btn btn-xs") %>
+                 class: "btn btn-100") %>
 
 <!-- Вариант 2 -->
 <%#= button_to "Оформить заказ", new_order_path, method: :get if(@order.nil?) %>
-
 
 <!-- Вариант 3 -->
 <%# if(@hide_button_checkout) %>
@@ -46,17 +47,8 @@
 <%= render 'carts/warning_price_block' if(cart.total_price > Cart::WARNING_PRICE) %>
 <hr />
 
-
 <%#= button_to 'Очистить корзину', cart, method: :delete, data: { confirm: 'Clear the cart?' } %>
-<%= button_to t('.empty'), cart, method: :delete, class: "btn btn-xs",
+<%= button_to t('.empty'), cart, method: :delete, class: "btn btn-100",
                                    data: { confirm: t('.empty_confirm') } %>
 <br>
 <br>
-
-
-<!--carts:
-    cart:
-      title: "Ваша Корзина"
-      empty: "Очистить корзину"
-      checkout: "Оформить заказ"
-      empty_confirm: "Все добавленные товары будут удалены. Очистить корзину?"-->

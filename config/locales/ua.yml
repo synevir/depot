@@ -34,14 +34,15 @@ ua:
 
 
   layouts:
-    application:
-      title:      "Книжкова полиця прагматика"
+    application:      
       home:       "Домашня сторiнка"
       questions:  "Питання"
       news:       "Новини"
       contact:    "Контакти"
       price_html: "Вартiсть: "
       login:      "Вхiд"
+    banner:
+      title:      "Книжкова полиця прагматика"
     form_search:
       find:          "Знайти"
       search_string: "Шукати..."
@@ -63,6 +64,8 @@ ua:
       price_html:      "Цiна: " 
       add_html:        "Додати до кошика"
       product_details: "Докладний опис"
+    index:
+      search_fall: "Пошук результатів не дав,спробуйте змінити запит."
 
   products:
     show:
@@ -77,7 +80,7 @@ ua:
     cart:
       title:              "Ваш Кошик"
       empty:              "Очистити кошик"
-      checkout:           "Оформити замовлення"
+      checkout:           "Оформити"
       empty_confirm:      "Очистити кошик?"
       cart_table_product: "Продукт"
       cart_table_price:   "Цiна"
@@ -95,7 +98,7 @@ ua:
     email:           "E-mail"
     pay_type:        "Засiб сплати"
     submit:          "Вiдправити заказ"
-    pay_prompt_html: "Оберiть засiб сплати"
+    pay_prompt_html: "Оберiть засiб сплати"    
 
     new:
       legend: "Будь ласка, заполнiть форму"
