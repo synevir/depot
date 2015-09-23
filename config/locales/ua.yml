@@ -98,7 +98,11 @@ ua:
     email:           "E-mail"
     pay_type:        "Засiб сплати"
     submit:          "Вiдправити заказ"
-    pay_prompt_html: "Оберiть засiб сплати"    
+    pay_prompt_html: "Оберiть засiб сплати"
+    payment_types:
+      check:          "Чек" 
+      credit_card:    "Кредитна картка" 
+      purchase_order: "Приходний ордер" 
 
     new:
       legend: "Будь ласка, заполнiть форму"

@@ -25,7 +25,8 @@ Order # <strong> <%= @order.id %></strong>
   </tr>
   <tr>
     <td> <strong>Pay type:</strong> </td>
-    <td> <%= @order.pay_type %>     </td>
+    <td> <%= paymentTypeIdToString(@order.pay_type_id) %>
+         <%#= @order.pay_type_id %></td>
   </tr>
 </table>
 

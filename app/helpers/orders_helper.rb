@@ -5,10 +5,20 @@ module OrdersHelper
 	end
 
   def payment_type_options
-	#options_for_select(Hash [*(Order::PAYMENT_TYPES.map{|x| [x.id, x] }).flatten ] )
-array = Order::PAYMENT_TYPES
-	  hash = array.inject({}) {|hash, obj| hash[obj.id] = obj }
-	  hash = Hash[*(array.map {|obj| [obj.id, obj]}).flatten]
+#     options_for_select(Hash [ Order::PAYMENT_TYPES.map {|x|
+# 	                     [ I18n.t('orders.payment_types.' + x.parameterize.underscore), x ] } ] )
+    options_for_select( PaymentType.all.collect{|p_t|
+	                     [I18n.t('orders.payment_types.' + p_t.name.parameterize.underscore),  p_t.id]})
   end
 
+  def paymentTypeIdToString(id)
+	if id.nil?
+	  return 'n/a'
+	else
+	  return PaymentType.find(id).name
+	end
+  end
+  
 end
+
+

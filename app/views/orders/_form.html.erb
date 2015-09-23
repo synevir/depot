@@ -1,4 +1,5 @@
 <%= form_for(@order) do |f| %>
+
   <% if @order.errors.any? %>
     <div id="error_explanation">
 <!--  <h2><%#= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2> -->
@@ -13,6 +14,7 @@
       </ul>
     </div>
   <% end %>
+
 
   <div class="input-group">
     <span class="input-group-addon">
@@ -36,14 +38,29 @@
     </span>
     <%= f.text_field :email, size: 40, class: 'form-control' %>
   </div>
-<!--   <hr /> -->
 
   <div class="input-group">
     <span class="input-group-addon">
       <%= f.label t('orders.pay_type') %>
     </span>
-    <%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: t('orders.pay_prompt_html') %>
-    <%#= f.select :pay_type, payment_type_options, prompt:'Select a payment method' %>
+    <%= f.select :pay_type_id, payment_type_options,  prompt: t('orders.pay_prompt_html') %>
+
+    <!--variant with constant array
+    <%#= f.select :pay_type, Order::PAYMENT_TYPES, prompt: t('orders.pay_prompt_html') %>
+-->
+    <!--variant with `options_for_select`
+    <%#= f.select :pay_type_id, options_for_select(PaymentType.all.
+                                        collect{|pay_type| [pay_type.name, pay_type.id]}),
+                 prompt: t('orders.pay_prompt_html') %>
+-->
+    <!--variant with `collection_select`
+    <%#= f.collection_select(:pay_type_id, PaymentType.all, :id, :name) %>
+-->
+
+    <!--variant with `options_from_collection_for_select`
+    <%#= f.select :pay_type_id, options_from_collection_for_select(PaymentType.all, :id, :name),
+                 prompt: t('orders.pay_prompt_html') %>
+-->
   </div>
 
   <hr />
