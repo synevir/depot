@@ -12,7 +12,7 @@
   <td class="item_price">
       <%= number_to_currency(line_item.product.price, unit: "", delimiter: " ",	format: "%n %u") %>
   </td>
-  <td class="quantity"> <%= line_item.quantity %>&times;</td>
+  <td class="quantity"> &times;<%= line_item.quantity %></td>
   <td class="item_price" align="right" nowrap>
       <%= number_to_currency(line_item.total_price, delimiter: " ", format: "%n %u")%>
   </td>
