@@ -18,9 +18,8 @@
   <td class="item_price" align="right" nowrap>
       <%#= number_to_currency(line_item.total_price, delimiter: " ", format: "%n %u")%>
       <%= number_to_currency(
-            number_to_human(line_item.total_price, units: :money),
-            delimiter: " ", format: "%n %u"
-      )%>
+            number_to_human(line_item.total_price, units: :money, precision: 5),
+            delimiter: " ", format: "%n %u")%>
   </td>
 <!--   условие добавлено для унификации шаблона при генерации почтового сообщения -->
   <% if @order.nil? %>
