@@ -41,10 +41,11 @@ class Product < ActiveRecord::Base
     end
   end
 
-
+#   курсы валют
   RATE_EURO = 0.9
   RATE_UAH  = 22
 
+#   пересчет цены для представлений в зависимости от выбранной локали
   def local_price
     case I18n.locale.to_s
       when 'en' then price

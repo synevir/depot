@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-	@users = User.order(:name)
+    @users = User.order(:name)
   end
 
   # GET /users/1
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
 
-# Попытка контроля текущего пароля при смене пароля 	#
+# Попытка контроля текущего пароля при смене пароля:
 # 	curr_pass = params[:user].delete(:current_password)
 # 	@user.errors.add(:current_password, 'is not correct') unless @user.authenticate(curr_pass)
 

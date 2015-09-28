@@ -2,6 +2,6 @@
 
 - Rails version: Rails 4.2.0
 
-- db: sqlite3 (develop mode)
+- db: sqlite3 (develop mode), postgres (production mode)
 
 
