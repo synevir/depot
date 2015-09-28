@@ -1,8 +1,7 @@
 - в блоке create контроллера заказов неопределен метод `current_cart`
 
 - перевести подтверждение о заказе в сообщении почты.
-- перевести админку (перечень платежных инструментов)
-- root/любой набор символов - выдает `notice`, что отсутствует перевод.Хотя на странице перевод есть.
+
 - при смене локали исчезает форма заказа
 
 - уменьшить ширину #side если корзина пуста
@@ -13,4 +12,46 @@
 
 - удалить шаблон _form_search из представлений, где он использовался до перемещения в laoyuts
 
-- заполнить реальными ссылками навигационное меню
+
+
+сначала написал функцию в хелпере
+
+  def currencyRate(price)
+    return case I18n.locale.to_s
+           when 'en' then price
+           when 'es' then price * 0.9
+           when 'ua' then price * 22
+           else price
+           end
+  end
+
+и во вьюхе заменил:
+  Product price: <%= number_to_currency(@product.price ) %>
+на
+  Product price: <%= number_to_currency(currencyRate(@product.price)  %>
+
+Этот способ работает, но нужно менять код во всех вьюхах
+
+
+
+потом попробовал написать отдельный метод в классе:
+class Product < ActiveRecord::Base
+
+  def self.localPrice
+    case I18n.locale.to_s
+      when 'en' then self.price
+      when 'es' then self.price * 0.9
+      when 'ua' then self.price * 22
+      else self.price
+    end
+  end
+
+end
+
+и во вьюхе заменил на
+  Product price: <%= @product.localPrice  %>
+
+Тут выдает ошибку: "undefined method `localPrice' for #<Product:0xb4fbc87c>"
+Но даже если бы и не было бы ошибки, все равно ведь пришлось снова искать все вьюхи, где стоит сейчас `@product.price'
+Собственно вопрос: "А как в магазинах реализовывают различные курсы?" Видел магазины, где цена кроме курса еще и от способа оплаты зависит.
+

@@ -41,6 +41,21 @@ class Product < ActiveRecord::Base
     end
   end
 
+
+  RATE_EURO = 0.9
+  RATE_UAH  = 22
+
+  def local_price
+    case I18n.locale.to_s
+      when 'en' then price
+      when 'es' then (price * RATE_EURO).round 2
+      when 'ua' then (price * RATE_UAH).round 2
+      else price
+      end
+  end
+
+
+
   private
 #   убеждаемся в отсутствии товарных позиций, ссылающихся на данный товар
     def ensure_not_referenced_by_any_line_item

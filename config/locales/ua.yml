@@ -120,3 +120,7 @@ ua:
      previous_label: "&#8592; Попередня"
      next_label:     "Наступна &#8594;"
      page_gap:       "&hellip;"
+     
+  money:
+    unit: ""
+    thousand: "тис."

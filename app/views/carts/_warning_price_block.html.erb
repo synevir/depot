@@ -10,6 +10,6 @@ font-size: small;
 
 <div id="warning_price_block">
   Sum in your's cart is biggest then
-  <%= number_to_currency(Cart::WARNING_PRICE, precision: 0, delimiter: ' ', format: "%n %u") %>
+  <%= number_to_currency(Cart::WARNING_PRICE, precision: 0, unit: '$', delimiter: ' ', format: "%n %u") %>
   , be attentive!
 </div>

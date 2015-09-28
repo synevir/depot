@@ -112,3 +112,7 @@ es:
      previous_label: "&#8592; Аnterior"
      next_label:     "Еl siguiente &#8594;"
      page_gap:       "&hellip;"
+
+  money:
+    unit: ""
+    thousand: "K"
