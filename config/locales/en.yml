@@ -98,17 +98,10 @@ en:
     payment_types:
       check:          "Check" 
       credit_card:    "Credit Card" 
-      purchase_order: "Orden de compra" 
+      purchase_order: "Purchase Order" 
     
     new:
       legend: "Please Enter Your Details"
-
-    
-
-    payment_types:
-      check:          "Check"
-      credit_card:    "Credit Card" 
-      purchase_order: "Purchase Order" 
 
   thanks: "Thank you for your order! To your mailbox sent a confirmation order."
   
@@ -116,3 +109,7 @@ en:
      previous_label: "&#8592; Previous"
      next_label:     "Next &#8594;"
      page_gap:       "&hellip;"
+  
+  money:
+    unit: ""
+    thousand: "K"

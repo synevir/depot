@@ -9,9 +9,7 @@ Rails.application.routes.draw do
 
   get 'admin/index'
 
-
   resources :users
-
 
   scope '(:locale)' do
     resources :line_items
@@ -25,6 +23,7 @@ Rails.application.routes.draw do
   end
 
   get 'store/index'
+  get 'store/questions'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

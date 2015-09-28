@@ -5,7 +5,7 @@ class LineItem < ActiveRecord::Base
 
 
   def total_price
-    product.price * quantity
+    product.local_price * quantity
   end
 
 end

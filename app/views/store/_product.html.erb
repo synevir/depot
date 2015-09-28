@@ -10,7 +10,11 @@
             <td>
               <span class="price">
 <!--              Price: <%#= number_to_currency(product.price, unit: "₴", format: "%n %u") %> -->
-                  <%= t('.price_html') + number_to_currency(product.price) %>
+                  <%#= t('.price_html') + number_to_currency( currency_rate(product.price),
+                  											 delimiter: " ", format: "%n %u") %>
+
+                  <%= t('.price_html') + number_to_currency( product.local_price,
+                  											 delimiter: " ", format: "%n %u") %>
               </span>
             </td>
             <td class="cell_button_add">

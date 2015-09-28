@@ -44,7 +44,7 @@
 
 
 <br>
-<%= render 'carts/warning_price_block' if(cart.total_price > Cart::WARNING_PRICE) %>
+<%= render 'carts/warning_price_block' if(cart.total_price > currency_rate(Cart::WARNING_PRICE)) %>
 <hr />
 
 <%#= button_to 'Очистить корзину', cart, method: :delete, data: { confirm: 'Clear the cart?' } %>
