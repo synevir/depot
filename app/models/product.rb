@@ -34,7 +34,7 @@ class Product < ActiveRecord::Base
   end
 
   def self.search(search_pattern)
-	 if search_pattern
+    if search_pattern
       where('title LIKE ?', "%#{search_pattern}%")
     else
       all

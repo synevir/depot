@@ -183,7 +183,7 @@
           <div class="method-source-code" id="search-source">
             <pre><span class="ruby-comment"># File app/models/product.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">search_pattern</span>)
-       <span class="ruby-keyword">if</span> <span class="ruby-identifier">search_pattern</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">search_pattern</span>
     <span class="ruby-identifier">where</span>(<span class="ruby-string">&#39;title LIKE ?&#39;</span>, <span class="ruby-node">&quot;%#{search_pattern}%&quot;</span>)
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">all</span>

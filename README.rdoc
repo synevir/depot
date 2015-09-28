@@ -12,7 +12,7 @@ Application environment:
 
 Notes:
 
-- The application works in the service `heroku clouds service` in the free plan. In this regard, if the site was not certain time requests, processing the first request (or opening page) 5-7sek is delayed.
+- The application works on the `heroku.com` in the free plan. Therefore, if the site was not certain time requests, processing the first request (or opening page) 5-7sek is delayed.
 - Send e-mail notification is implemented as a background task (worker bundle exec rake jobs:work) and in the current tariff plan is not available due to the restriction of hosting. Therefore, in order to remove  the error when sending mail, used plug as a link to this clarification
 
 ==========================================================================================================
