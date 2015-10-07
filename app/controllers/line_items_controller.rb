@@ -11,18 +11,10 @@ class LineItemsController < ApplicationController
     @line_items = LineItem.all
   end
 
-  # GET /line_items/1
-  # GET /line_items/1.json
-  def show
-  end
 
   # GET /line_items/new
   def new
     @line_item = LineItem.new
-  end
-
-  # GET /line_items/1/edit
-  def edit
   end
 
   # POST /line_items
@@ -74,6 +66,7 @@ class LineItemsController < ApplicationController
 	  format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

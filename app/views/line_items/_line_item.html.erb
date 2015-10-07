@@ -10,7 +10,7 @@
   </div>
   </td>
   <td class="item_price">
-      <%#= number_to_currency(line_item.product.price, unit: "", delimiter: " ",	format: "%n %u") %>
+<!--       <%#= number_to_currency(line_item.product.price, unit: "", delimiter: " ",	format: "%n %u") %> -->
       <%= number_to_human(line_item.product.local_price, units: :money, precision: 5,
       								significant: false) %>
   </td>
