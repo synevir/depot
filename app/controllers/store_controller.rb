@@ -3,6 +3,8 @@ class StoreController < ApplicationController
   skip_before_action :authorize
   before_action :set_cart
 
+  require "prawn"
+
 
   def index
 #   @products = Product.order(:title)              // first version  `simple`
@@ -14,10 +16,13 @@ class StoreController < ApplicationController
     end
   end
 
-  def show
-    Prawn::Document.generate("implicit.pdf") do
-        text("Customers list:")
-    end
+
+
+  def download_pdf()
+    output = ProductsCatalog.new.to_pdf
+    send_data( output,:type => 'application/pdf',
+                      :filename => "products.pdf",
+                      :disposition => "inline")
   end
 
 end

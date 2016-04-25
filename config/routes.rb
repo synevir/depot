@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :carts
     resources :orders
     resources :products
-#  root 'products#index'
+
     root to: 'store#index', as: 'store', via: :all
 # символ as: определяет название маршрута + _path
 # в данном случае это будет store_path
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   get 'store/index'
   get 'store/questions'
+  get 'store/download_pdf'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

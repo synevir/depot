@@ -25,5 +25,8 @@ module Depot
 
     # `delay_job` gem for sending email in background
     config.active_job.queue_adapter = :delayed_job
+
+    #  autoload  ProductsCatalog class module
+    config.autoload_paths << "#{Rails.root}/app/Catalogs"
   end
 end
