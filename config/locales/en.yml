@@ -38,6 +38,7 @@ en:
       news:      "News"
       contact:   "Contact"
       login:     "Login"
+      download:   "Download the catalog in `PDF`"      
     banner:
       title:     "Pragmatic Bookshelf"      
     form_search:
@@ -99,9 +100,15 @@ en:
       check:          "Check" 
       credit_card:    "Credit Card" 
       purchase_order: "Purchase Order" 
-    
+      
     new:
       legend: "Please Enter Your Details"
+    
+  sessions:
+    new:
+      legend:         "Sign in, please"
+      password_label: "Password:"
+      button_caption: "Log in"
 
   thanks: "Thank you for your order! To your mailbox sent a confirmation order."
   

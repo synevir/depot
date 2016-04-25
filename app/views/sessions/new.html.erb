@@ -9,7 +9,8 @@
 
 <%= form_tag do %>
   <fieldset>
-    <legend>Зарегистрируйтесь, пожалуйста</legend>
+    <legend>  <%= t('.legend') %> </legend>
+
     <table>
       <tr>
 		<div>
@@ -19,14 +20,14 @@
       </tr>
       <tr>
 		<div>
-		  <td><%= label_tag :password, 'Пароль:', class: 'input-group' %></td>
+		  <td><%= label_tag :password, t('.password_label'), class: 'input-group' %></td>
 		  <td><%= password_field_tag :password, params[:password], class: 'form-control' %></td>
 		</div>
       </tr>
     </table>
 
     <div>
-      <%= submit_tag "Log In", class:"btn btn-success" %>
+      <%= submit_tag t('.button_caption'), class:"btn btn-success" %>
     </div>
   </fieldset>
 <% end %>

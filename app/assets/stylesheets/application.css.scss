@@ -205,10 +205,8 @@ body {
   }
 
   #side {
-    /*.side-snarrow { width: 25%;}
-    .side-wide   { width: 35%;}*/
     width:   33%;
-	height:  100%;
+	  height:  100%;
     float:   left;
     padding: 1em 1em;
     background: #141;  /*dark-green*/
@@ -331,10 +329,10 @@ body {
 
 
 #notice {
-	color: #000 !important;
-	 font: bold smaller sans-serif;
-   border: 2px solid red;
-  padding: 1em;
+	          color: #000 !important;
+	           font: bold smaller sans-serif;
+           border: 2px solid red;
+          padding: 1em;
     margin-bottom: 2em;
  background-color: #f0f0f0;
 }

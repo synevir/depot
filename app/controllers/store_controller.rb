@@ -14,4 +14,10 @@ class StoreController < ApplicationController
     end
   end
 
+  def show
+    Prawn::Document.generate("implicit.pdf") do
+        text("Customers list:")
+    end
+  end
+
 end

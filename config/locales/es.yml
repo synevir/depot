@@ -41,6 +41,7 @@ es:
       contact:    "Contacto"
       price_html: "Precio de producto: "
       login:      "Еntrada"
+      download:   "Descargar el catálogo en `PDF`"      
     banner:
       title:      "Publicaciones de Pragmatic"
     form_search:
@@ -101,9 +102,16 @@ es:
       credit_card:    "Tarjeta de crédito" 
       purchase_order: "Orden de compra" 
 
-
     new:
       legend: "Por favor, introduzca sus datos"
+      
+
+  sessions:
+    new:
+      legend:         "Para registrarse, por favor"
+      password_label: "Contraseña:"
+      button_caption: "Entrada"
+  
 
 
   thanks: "Gracias por su pedido! En su buzón de correo enviado una orden de confirmación."
