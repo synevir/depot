@@ -181,4 +181,3 @@ class String
 #     ActionController::Base.helpers.strip_tags(self)
 #   end
 end
-
