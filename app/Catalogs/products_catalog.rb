@@ -106,10 +106,10 @@ class ProductsCatalog < Prawn::Document
     stroke
     move_down 30
 
-    @products = Product.order('created_at')
+    @products = Product.order('updated_at DESC')
     @products.each do |product|
       img = Image_dir + product.image_url
-# размер масштабирования в зависимости от расширения
+      # размер масштабирования в зависимости от расширения
       File.extname(img) == '.png' ? img_fit = Cover_size_small : img_fit = Cover_size_normal
 
       cell_title = make_cell(:content => product.title, :colspan => 2,
@@ -138,6 +138,7 @@ class ProductsCatalog < Prawn::Document
       end
       move_down 25
 
+      # разбиение на страницы и вывод верхнего колонтитула
       if(cursor < 200 )
         start_new_page
         text("Pragmatic Bookshelf \'2016 ", :size => 14)
@@ -152,7 +153,7 @@ class ProductsCatalog < Prawn::Document
 
     end
 
-#      font("TimeRoman", :style => :normal)
+     # номерация страниц буклета
      string = "page <page>"
      options = { :at => [bounds.right - 150, 0],
               :width => 150,
@@ -165,31 +166,6 @@ class ProductsCatalog < Prawn::Document
 #      options[:page_filter]    = lambda{ |pg| pg > 1 }
      number_pages string, options
 
-
-#     product = Product.first
-#     img = Image_dir + product.image_url
-#     cell_title = make_cell(:content => product.title, :colspan => 2,
-#                            :padding => Padding_in_cell)
-#     cell_desc = make_cell(:content => product.description,
-#                           :font => "Times-Roman",
-#                           :font_style => :italic,
-#                           :size => 14
-#                          )
-#     cell_price = make_cell(:content => "Price: $ #{product.price}",
-#                            :size => 10, :colspan => 2 )
-#     cell_empty = make_cell(:content => "", :size => 10, :colspan => 2)
-#
-#     table([[cell_title],
-#            [{:image => img, :scale => 0.9}, cell_desc],
-#            [cell_price],
-#            [cell_empty]],
-#            :cell_style => Default_style,
-#            :column_widths => Width_booklets_columns
-#          ) do
-#
-#       row(0).borders = [:top]
-#       rows(1..3).each{|r| r.borders =[]}
-#     end
     render
   end
 
