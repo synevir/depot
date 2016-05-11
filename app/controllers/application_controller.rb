@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
            flash.now[:notice] = "`#{params[:locale]}` translation not available"
 # перевод недоступен
            logger.error flash.now[:notice]
-	 end
+         end
        end
     end
 

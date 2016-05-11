@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'store/index'
   get 'store/questions'
   get 'store/download_pdf'
+  get 'store/downloadPdfBooklet'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

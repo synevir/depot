@@ -60,7 +60,7 @@ en:
       price_html:      "Price: "      
       add_html:        "Add to Cart"
       price_html:      "Price: "
-      product_details: "Product details:"
+      product_details: "Product details"
     index:
       search_fall: "Your search returned no results. Try changing your query."
 

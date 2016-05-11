@@ -75,7 +75,7 @@ ua:
       price_html: "Вартiсть: "
     show_not_signed:
       price_html:      "Вартiсть: "
-      product_details: "Докладний опис"
+      product_details: "Докладний опис:"
 
   carts:
     cart:
@@ -109,7 +109,6 @@ ua:
       legend: "Будь ласка, заполнiть форму"
 
 
-
   sessions:
     new:
       legend:         "Зареєструйтеся, будь ласка"
@@ -118,6 +117,7 @@ ua:
 
 
   thanks: "Дякуємо за Ваше замовлення. На Вашу скриньку направлено листа з підтвердженням замовлення"
+    
 
   will_paginate:
      previous_label: "&#8592; Попередня"

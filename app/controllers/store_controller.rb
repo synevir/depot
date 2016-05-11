@@ -3,8 +3,7 @@ class StoreController < ApplicationController
   skip_before_action :authorize
   before_action :set_cart
 
-  require "prawn"
-
+#   require Prawn
 
   def index
 #   @products = Product.order(:title)              // first version  `simple`
@@ -18,11 +17,21 @@ class StoreController < ApplicationController
 
 
 
-  def download_pdf()
+  def download_pdf
     output = ProductsCatalog.new.to_pdf
     send_data( output,:type => 'application/pdf',
                       :filename => "products.pdf",
                       :disposition => "inline")
   end
+
+
+  def downloadPdfBooklet
+    output = ProductsCatalog.new.to_pdf_booklet
+    send_data( output,:type => 'application/pdf',
+                      :filename => "products_booklet.pdf",
+                      :page_size => "A4",
+                      :disposition => "inline")
+  end
+
 
 end

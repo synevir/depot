@@ -10,9 +10,12 @@
             <td>
               <span class="price">
 <!--              Price: <%#= number_to_currency(product.price, unit: "₴", format: "%n %u") %> -->
+
+                  <!--  price localization, variant with using function from helper -->
                   <%#= t('.price_html') + number_to_currency( currency_rate(product.price),
                   											 delimiter: " ", format: "%n %u") %>
 
+                  <!--  price localization, variant with models method -->
                   <%= t('.price_html') + number_to_currency( product.local_price,
                   											 delimiter: " ", format: "%n %u") %>
               </span>

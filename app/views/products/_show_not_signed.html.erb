@@ -13,7 +13,7 @@
           <tr>
             <td>
               <span class="price">
-                  <%= t('.price_html') + number_to_currency(@product.price) %>
+                  <%= t('.price_html') + number_to_currency(currency_rate(@product.price)) %>
               </span>
             </td>
             <td width="150px" align="right">
