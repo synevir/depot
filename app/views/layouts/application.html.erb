@@ -65,21 +65,24 @@
           </div>
         </div>
 
+        <br>
+        <br>
         <div class="pillow"> <!--отрисовка линии для отделения ссылок на `pdf`-->
           <div id="date">
-            <br>
+            <%= t('.downloads') %>
           </div>
         </div>
 
         <div class="pillow">
          <ul class="nav nav-pills">
-           <li><%= link_to "PDF Booklet", store_downloadPdfBooklet_path%></li>
+           <br>
+           <li><%= link_to t('.pdf_booklet'), store_downloadPdfBooklet_path%></li>
          </ul>
         </div>
 
         <div class="pillow">
          <ul class="nav nav-pills">
-           <li><%= link_to t('.download'), store_download_pdf_path%></li>
+           <li><%= link_to t('.pdf_catalog'), store_download_pdf_path%></li>
          </ul>
         </div>
 

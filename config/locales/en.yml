@@ -38,7 +38,10 @@ en:
       news:      "News"
       contact:   "Contact"
       login:     "Login"
-      download:   "Download the catalog in `PDF`"      
+      downloads:  "Downloads"
+      pdf_catalog: "PDF Catalog"
+      pdf_booklet: "PDF Booklet"
+           
     banner:
       title:     "Pragmatic Bookshelf"      
     form_search:

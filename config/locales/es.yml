@@ -41,7 +41,9 @@ es:
       contact:    "Contacto"
       price_html: "Precio de producto: "
       login:      "Еntrada"
-      download:   "Descargar el catálogo en `PDF`"      
+      downloads:  "Descargar"
+      pdf_catalog: "Catálogo PDF"
+      pdf_booklet: "Folleto PDF"
     banner:
       title:      "Publicaciones de Pragmatic"
     form_search:

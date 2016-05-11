@@ -41,7 +41,9 @@ ua:
       contact:    "Контакти"
       price_html: "Вартiсть: "
       login:      "Вхiд"
-      download:   "Скачати каталог в `PDF`"
+      downloads:  "Скачати"
+      pdf_catalog: "PDF Каталог"
+      pdf_booklet: "PDF Буклет"
     banner:
       title:      "Книжкова полиця прагматика"
     form_search:
