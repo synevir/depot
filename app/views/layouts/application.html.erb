@@ -47,7 +47,7 @@
             <ul class="nav nav-pills nav-stacked">
                <li><%= link_to t('.home'), store_path %></li>
                <li><%= link_to t('.questions'), store_questions_path %></li>
-               <li><%= link_to t('.contact'), "http://myphpdevelop.zz.mu" %></li>
+               <li><%= link_to t('.contact'), "http://myphpdevelop.000webhostapp.com" %></li>
              </ul>
           </div>
         </div>
@@ -55,7 +55,7 @@
         <div class="pillow">
           <div id="nav_admin">
             <% if session[:user_id] %>
-	          <%= render 'layouts/admin_nav_links' %>
+                  <%= render 'layouts/admin_nav_links' %>
             <% else %>
               <ul class="nav nav-pills">
                 <li><%= link_to t('.login'), login_path,
@@ -89,7 +89,7 @@
 
 
       </div> <!--div side-->
-<!-- 	  конец левого сайд-бара -->
+<!--      конец левого сайд-бара -->
 
     </div> <!--columns-->
   </div><!-- .wrapper -->
