@@ -1,0 +1,131 @@
+ua:
+  activerecord:
+    models:
+      order: "замовлення"
+
+    errors:
+      models:
+        order:
+          attributes:
+            name:
+                too_short: "- дуже коротке ім\'я "
+            email:
+                invalid:   "- помилковий формат eлектронної скрині"
+            pay_type:
+                inclusion: "- потрiбно обрати засiб оплати"
+
+      messages:
+        too_short: "- дуже коротка"        
+        blank:     "- не може бути пустим"
+
+    attributes:
+      order:
+        address:  "Адреса доставки"
+        name:     "Iм`я"
+        email:    "E-mail"
+        pay_type: "Засiб сплати"
+
+  errors:
+    template:
+      body: "Поля з помилками:"
+      header:
+        one:   "1 помилка при заповненнi форми %{model}"
+        other: "%{count} помилки при заповненнi форми %{model}"
+
+
+  layouts:
+    application:      
+      home:       "Домашня сторiнка"
+      questions:  "Питання"
+      news:       "Новини"
+      contact:    "Контакти"
+      price_html: "Вартiсть: "
+      login:      "Вхiд"
+      downloads:  "Скачати"
+      pdf_catalog: "PDF Каталог"
+      pdf_booklet: "PDF Буклет"
+    banner:
+      title:      "Книжкова полиця прагматика"
+    form_search:
+      find:          "Знайти"
+      search_string: "Шукати..."
+
+  number:
+    format:
+      separator: ','
+      delimeter: '-'
+    currency:
+      format:
+        unit:     "₴"
+        precision: 2
+        format:   "%n %u"
+
+  store:
+    title:
+      title_html: "Tвiй прагматичний каталог"
+    product:
+      price_html:      "Цiна: " 
+      add_html:        "Додати до кошика"
+      product_details: "Докладний опис"
+    index:
+      search_fall: "Пошук результатів не дав,спробуйте змінити запит."
+
+  products:
+    show:
+      title_product_details: "Детальна інформація"
+    show_if_signed:
+      price_html: "Вартiсть: "
+    show_not_signed:
+      price_html:      "Вартiсть: "
+      product_details: "Докладний опис:"
+
+  carts:
+    cart:
+      title:              "Ваш Кошик"
+      empty:              "Очистити кошик"
+      checkout:           "Оформити"
+      empty_confirm:      "Очистити кошик?"
+      cart_table_product: "Продукт"
+      cart_table_price:   "Цiна"
+      cart_table_items:   "К-сть"
+      cart_table_summ:    "Сума"
+      cart_table_total:   "Загалом:"
+
+  line_items:
+    line_item:
+      delete_item: "Видалити"
+
+  orders:
+    name:            "Iм`я"
+    address_html:    "Адреса доставки"
+    email:           "E-mail"
+    pay_type:        "Засiб сплати"
+    submit:          "Вiдправити заказ"
+    pay_prompt_html: "Оберiть засiб сплати"
+    payment_types:
+      check:          "Чек" 
+      credit_card:    "Кредитна картка" 
+      purchase_order: "Приходний ордер" 
+
+    new:
+      legend: "Будь ласка, заполнiть форму"
+
+
+  sessions:
+    new:
+      legend:         "Зареєструйтеся, будь ласка"
+      password_label: "Пароль:"
+      button_caption: "Вхід"
+
+
+  thanks: "Дякуємо за Ваше замовлення. На Вашу скриньку направлено листа з підтвердженням замовлення"
+    
+
+  will_paginate:
+     previous_label: "&#8592; Попередня"
+     next_label:     "Наступна &#8594;"
+     page_gap:       "&hellip;"
+     
+  money:
+    unit: ""
+    thousand: "тис."

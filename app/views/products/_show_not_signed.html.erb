@@ -1,0 +1,36 @@
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+    <div class="entry">
+      <h2><%= @product.title %></h2>
+      <hr />
+      <%= image_tag(@product.image_url) %>
+        <p> <%= sanitize(@product.description) %> </p>
+
+        <div class="price_line">
+        <table border="0">
+          <tr>
+            <td>
+              <span class="price">
+                  <%= t('.price_html') + number_to_currency(currency_rate(@product.price)) %>
+              </span>
+            </td>
+            <td width="150px" align="right">
+            </td>
+          <tr>
+        </table>
+
+		<hr />
+        <table id="product_details_table">
+          <tr><th> <%= t('.product_details') %> </th></tr>
+          <tr>
+            <td> <%= sanitize(@product.details) %> </td>
+          </tr>
+        </table>
+
+        <%= link_to 'Back to the store', store_path, class: 'nav btn btn-primary',
+                     style: 'width: 9em;'  %><br/>
+        </div>
+    </div>
+    <br>

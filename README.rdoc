@@ -1,0 +1,21 @@
+The `DEPOT Online Store` documentation
+
+Application environment:
+
+- Ruby version: ruby 2.2.0p0 (2014-12-25 revision 49005) [i686-linux]
+
+- Rails version: Rails 4.2.0
+
+- db:
+      develop mode - sqlite3
+      production   - postgres
+
+Notes:
+
+- The application works on the `heroku.com` in the free plan. Therefore, if the site was not certain time requests, processing the first request (or opening page) 5-7sek is delayed.
+- Send e-mail notification is implemented as a background task (worker bundle exec rake jobs:work) and in the current tariff plan is not available due to the restriction of hosting. Therefore, in order to remove  the error when sending mail, used plug as a link to this clarification
+
+==========================================================================================================
+Примечания:
+- Приложение развернуто на облачном сервисе `heroku` на бесплатном тарифном  плане.В связи с этим, если на сайт определенное время не поступали запросы, то обработка первого запроса (или открытие страницы) происходит с задержкой 5-7 секунд.
+- Отправка почтового уведомления реализована как фоновая задача (worker) и в текущем тарифном плане не доступна из-за ограничения хостинга. Поэтому, чтобы убрать ошибку превышения интервала времени при отправке сообщения на почту, использована заглушка в виде ссылки на данное пояснение.

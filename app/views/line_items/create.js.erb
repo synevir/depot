@@ -1,0 +1,14 @@
+$('#notice').hide("fold", 1000);
+
+if ($('#cart tr').length == 2) { $('#cart').show("fold", 800);}
+
+
+$('#cart').html("<%= escape_javascript render(@cart) %>");
+
+
+
+$('#current_item').css({'color':' #A52A2A'}).
+   animate({'color':'white'}, 1000);
+
+
+

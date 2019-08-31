@@ -1,0 +1,59 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Questions page</title>
+    <style>
+      boby{ font-family: "DejaVu", serif; }
+      p {
+        text-indent: 1.5em;     /* Отступ первой строки   */
+        text-align: justify;    /* Выравнивание по ширине */
+      }
+      li { padding: 3px; }
+      ul {
+        padding-bottom: 10px;
+        margin-left: 20px;
+      }
+      .h_3{
+        font-size: 20px;
+        font-family: "DejaVu", serif;
+      }
+    </style>
+</head>
+<body>
+  <div class="entry" style="margin: 20px 10px; line-height: 1.2;">
+    <p>
+      <span class="h_3">При написанні сайту використовані наступні технології: </span>
+      <ul>
+        <li>Платформа: Ruby on Rails 4.2.0                       </li>
+        <li>Ruby 2.2.0p0 (2014-12-25 revision 49005) [i686-linux]</li>
+        <li>jQuery 1.11.2                                        </li>
+        <li>coffee-script 2.4.1                                  </li>
+        <li>Database: sqlite3(develop), postgres(production)    </li>
+        <li>bootstrap-sass 3.3.5.1                               </li>
+      </ul>
+      Додавання продуктів до кошика виконано за допомогою "АJax".
+      Відправка повідомленнь на електронну пошту тестувалась за допомогою "letter_opener".
+      Локалізація виконана на модулі "I18n".
+    </p>
+    Докладна документація по класам та методам доступна за
+       <a href="http://myphpdevelop.000webhostapp.com/depot_doc/index.html">посиланням.</a>
+    <br>
+    <br>
+    Примітки:
+    <hr>
+    Cайт працює у хмарному сервісі <strong> `heroku.com` </strong> на безкоштовному тарифному плані.
+    Тому на сайт розповсюджуються деякі обмеження функціональності:
+    <ul>
+        <li>
+          якщо на сайт деякий час не надходили запити, то обробка запросу (або відкриття
+          нової сторінки) відбувається з затримкою 5-7 секунд.
+        </li>
+        <li>
+          Відправка поштового повідомлення реалізована як фонова задача <strong> worker bundle exec rake jobs:work</strong> і в поточному тарифному плані не доступна. Тому, щоб убрати помилку перевищення інтервалу часу при відправці повідомлення на електронну пошту користувача, виконана заглушка у вигляді ссилки на це пояснення.
+        </li>
+      </ul>
+    
+  </div>
+  <br>
+</body>
+</html>

@@ -1,0 +1,125 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  activerecord:
+    models:
+      order: "order"
+      
+  errors:
+    template:
+      body: "Fields with errors:"
+      header:
+        one:   "1 error in filling forms %{model}"
+        other: "%{count} errors in filling forms %{model}"
+
+  layouts:    
+    application:      
+      home:      "Home page"
+      questions: "Questions"
+      news:      "News"
+      contact:   "Contact"
+      login:     "Login"
+      downloads:  "Downloads"
+      pdf_catalog: "PDF Catalog"
+      pdf_booklet: "PDF Booklet"
+           
+    banner:
+      title:     "Pragmatic Bookshelf"      
+    form_search:
+      find:          "Find..."      
+      search_string: "Search..."
+      
+
+  number:
+    currency:
+      format:
+        unit:     '$'
+        precision: 2
+        format:    "%u %n"
+
+  store:    
+    title:
+      title_html: "Your Pragmatic Catalog"    
+    product:
+      price_html:      "Price: "      
+      add_html:        "Add to Cart"
+      price_html:      "Price: "
+      product_details: "Product details"
+    index:
+      search_fall: "Your search returned no results. Try changing your query."
+
+  products:
+    show:
+      title_product_details: "Product details:"
+    show_if_signed:
+      price_html: "Price: "
+    show_not_signed:
+      price_html:      "Price: "
+      product_details: "Product details:"    
+    
+  carts:
+    cart:
+      title: "Your Cart"
+      empty: "Empty cart"
+      checkout: "Checkout"
+      empty_confirm: "Clear the cart?"
+      cart_table_product: "Product"
+      cart_table_price:   "Price"
+      cart_table_items:   "Items"
+      cart_table_summ:    "Sum"
+      cart_table_total:   "Total:"
+      
+  line_items:
+    line_item:
+      delete_item: "Delete"
+
+  orders:
+    name:            "Name"
+    address_html:    "Address"
+    email:           "E-mail"
+    pay_type:        "Pay with"
+    pay_prompt_html: "Select a payment method"
+    submit:          "Place Order"
+    payment_types:
+      check:          "Check" 
+      credit_card:    "Credit Card" 
+      purchase_order: "Purchase Order" 
+      
+    new:
+      legend: "Please Enter Your Details"
+    
+  sessions:
+    new:
+      legend:         "Sign in, please"
+      password_label: "Password:"
+      button_caption: "Log in"
+
+  thanks: "Thank you for your order! To your mailbox sent a confirmation order."
+  
+  will_paginate:
+     previous_label: "&#8592; Previous"
+     next_label:     "Next &#8594;"
+     page_gap:       "&hellip;"
+  
+  money:
+    unit: ""
+    thousand: "K"

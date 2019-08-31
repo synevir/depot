@@ -1,0 +1,17 @@
+<table id='cart_table'>
+	<tr>
+		<th> Product  </th>
+		<th> Price    </th>
+		<th> items    </th>
+		<th> Summa    </th>
+	</tr>
+	<%= render(@cart.line_items) %>
+
+    <tr class="total_line">
+    <td colspan="3">Total:</td>
+    <td id="total_cell">
+      <%= number_to_currency(@cart.total_price, unit: "₴",  delimiter: " ",
+							 format: "%n %u")%>
+    </td>
+  </tr>
+</table>

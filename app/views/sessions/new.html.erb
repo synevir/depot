@@ -1,0 +1,35 @@
+<div class="depot_form">
+  <% if flash[:alert] %>
+    <p id="notice"><%= flash[:alert] %></p>
+  <% end %>
+
+  <% if notice %>
+    <p id="notice"><%= notice %> </p>
+  <% end %>
+
+<%= form_tag do %>
+  <fieldset>
+    <legend>  <%= t('.legend') %> </legend>
+
+    <table>
+      <tr>
+		<div>
+		  <td><%= label_tag :name, 'Login:', class: 'input-group' %></td>
+		  <td><%= text_field_tag :name, params[:name], class: 'form-control' %></td>
+		</div>
+      </tr>
+      <tr>
+		<div>
+		  <td><%= label_tag :password, t('.password_label'), class: 'input-group' %></td>
+		  <td><%= password_field_tag :password, params[:password], class: 'form-control' %></td>
+		</div>
+      </tr>
+    </table>
+
+    <div>
+      <%= submit_tag t('.button_caption'), class:"btn btn-success" %>
+    </div>
+  </fieldset>
+<% end %>
+
+</div>

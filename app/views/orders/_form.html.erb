@@ -1,0 +1,71 @@
+<%= form_for(@order) do |f| %>
+
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+<!--  <h2><%#= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2> -->
+      <h2> <%=raw t('errors.template.header', count: @order.errors.count,
+                   model: t('activerecord.models.order')) %>. </h2>
+       <p><%= t('errors.template.body') %></p>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= raw message %></li>   <!--raw выводит необработанное сообщение-->
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="input-group">
+    <span class="input-group-addon">
+      <%= f.label t('orders.name'), id:"label_name" %>
+<!-- если нужна привязка label к полю:
+<%#= f.label :name t('orders.name'), id:"label_name" %>  -->
+    </span>
+    <%= f.text_field :name, size: 40, class: 'form-control' %>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon">
+      <%= f.label t('orders.address_html') %>
+    </span>
+    <%= f.text_area :address, rows: 3, cols: 40, class: 'form-control' %>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon">
+      <%= f.label "E-mail" %>
+    </span>
+    <%= f.text_field :email, size: 40, class: 'form-control' %>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon">
+      <%= f.label t('orders.pay_type') %>
+    </span>
+    <%= f.select :pay_type_id, payment_type_options,  prompt: t('orders.pay_prompt_html') %>
+
+    <!--variant with constant array
+    <%#= f.select :pay_type, Order::PAYMENT_TYPES, prompt: t('orders.pay_prompt_html') %>
+-->
+    <!--variant with `options_for_select`
+    <%#= f.select :pay_type_id, options_for_select(PaymentType.all.
+                                        collect{|pay_type| [pay_type.name, pay_type.id]}),
+                 prompt: t('orders.pay_prompt_html') %>
+-->
+    <!--variant with `collection_select`
+    <%#= f.collection_select(:pay_type_id, PaymentType.all, :id, :name) %>
+-->
+
+    <!--variant with `options_from_collection_for_select`
+    <%#= f.select :pay_type_id, options_from_collection_for_select(PaymentType.all, :id, :name),
+                 prompt: t('orders.pay_prompt_html') %>
+-->
+  </div>
+
+  <hr />
+  <div class="actions">
+    <%= f.submit t('orders.submit'), class:"btn btn-primary" %>
+  </div>
+
+<% end %>

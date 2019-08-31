@@ -1,0 +1,6 @@
+Уважаемый(ая) <%= @order.name %>
+Сообщаем, что Ваш заказ:
+<%= render @order.line_items %>
+был обновлен(отправлен на Ваш адрес: "<%= @order.address %>")
+<%= @order.ship_date %>
+C уважением, администрация магазина "Pragmatic Store"

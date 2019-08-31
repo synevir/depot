@@ -1,0 +1,43 @@
+<style>
+  #table_order_show td {
+    padding: 5px;
+     margin: 5px;
+     border: solid 1px #f1f1f1;
+  }
+</style>
+
+Order # <strong> <%= @order.id %></strong>
+<hr />
+
+
+<table id="table_order_show">
+  <tr>
+    <td> <strong>Name:</strong> </td>
+    <td> <%= @order.name %>     </td>
+  </tr>
+  <tr>
+    <td> <strong>Address:</strong> </td>
+    <td> <%= @order.address %>     </td>
+  </tr>
+  <tr>
+    <td> <strong>Email:</strong> </td>
+    <td> <%= @order.email %>     </td>
+  </tr>
+  <tr>
+    <td> <strong>Pay type:</strong> </td>
+    <td> <%= paymentTypeIdToString(@order.pay_type_id) %>
+         <%#= @order.pay_type_id %></td>
+  </tr>
+</table>
+
+
+<hr />
+<p>
+  <strong>Items:</strong>
+  <%= render @order.line_items %>
+</p>
+
+<hr />
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

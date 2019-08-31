@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <title>Depot</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body class='<%= controller.controller_name %>' >
+  <%=favicon_link_tag %>
+  <div class="wrapper">
+    <div id="banner">
+       <%= render 'layouts/banner' %>
+    </div>
+
+    <div id="columns" class="middle">
+      <div class="container">
+        <div id="main">
+          <%= yield %>
+        </div>
+	  </div><!-- .container-->
+
+<!-- левый сайд-бар для корзины -->
+	  <div id="side" class="left-sidebar">
+	    <div class="pillow">
+          <% if @cart %>
+            <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+              <%= render @cart %>  <!--div id="cart" добавляется автоматом-->
+            <% end %>
+          <% end %>
+        </div>
+        <br>
+
+        <div class="pillow">
+	      <div id="date" >
+		    <%= DateTime.now.strftime("%Y-%m-%d / %H:%M") %>
+		    <br>
+	      </div>
+        </div>
+
+        <div class="pillow">
+          <div id="nav_shared">
+            <ul class="nav nav-pills nav-stacked">
+               <li><%= link_to t('.home'), store_path %></li>
+               <li><%= link_to t('.questions'), store_questions_path %></li>
+               <li><%= link_to t('.contact'), "http://myphpdevelop.000webhostapp.com" %></li>
+             </ul>
+          </div>
+        </div>
+
+        <div class="pillow">
+          <div id="nav_admin">
+            <% if session[:user_id] %>
+                  <%= render 'layouts/admin_nav_links' %>
+            <% else %>
+              <ul class="nav nav-pills">
+                <li><%= link_to t('.login'), login_path,
+                        id: "btn_login", class: "btn btn-xs btn-success" %></li>
+              </ul>
+            <% end %>
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <div class="pillow"> <!--отрисовка линии для отделения ссылок на `pdf`-->
+          <div id="date">
+            <%= t('.downloads') %>
+          </div>
+        </div>
+
+        <div class="pillow">
+         <ul class="nav nav-pills">
+           <br>
+           <li><%= link_to t('.pdf_booklet'), store_downloadPdfBooklet_path%></li>
+         </ul>
+        </div>
+
+        <div class="pillow">
+         <ul class="nav nav-pills">
+           <li><%= link_to t('.pdf_catalog'), store_download_pdf_path%></li>
+         </ul>
+        </div>
+
+
+
+      </div> <!--div side-->
+<!--      конец левого сайд-бара -->
+
+    </div> <!--columns-->
+  </div><!-- .wrapper -->
+  <%= debug(params) if Rails.env.development? %>
+</body>
+</html>

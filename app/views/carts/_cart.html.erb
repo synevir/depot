@@ -1,0 +1,54 @@
+<style>
+ .th-center {text-align: center; }
+</style>
+<!-- <h2>Your Cart:</h2> -->
+<h3 class="h3_cart"><%= t('.title')%></h3>
+<hr />
+
+<table id='cart_table'>
+  <tr>
+	<th> <%= t('.cart_table_product') %>  </th>
+	<th class="th-center"> <%= t('.cart_table_price')   %>  </th>
+	<th class="th-center"> <%= t('.cart_table_items')   %>  </th>
+	<th class="th-center"> <%= t('.cart_table_summ')    %>  </th>
+  </tr>
+  <%= render(cart.line_items) %>
+  <tr class="total_line">
+    <td colspan="2" class="total_cell"> <%= t('.cart_table_total') %></td>
+    <td colspan="2" class="total_cell">
+      <%= number_to_currency(cart.total_price, delimiter: " ", format: "%n %u")%>
+    </td>
+
+  </tr>
+</table>
+
+<!-- кнопка "оформить заказ" различные варианты деактивации после нажатия-->
+<!--  ================================================================== -->
+<!-- Вариант 1  деактивация кнопки после орисовки формы заказа -->
+<%#= button_to("Оформить заказ", new_order_path, method: :get, :disabled => !@order.nil?) %>
+<%= button_to( t('.checkout'), new_order_path, method: :get, :disabled => !@order.nil? ,
+                 class: "btn btn-100") %>
+
+<!-- Вариант 2 -->
+<%#= button_to "Оформить заказ", new_order_path, method: :get if(@order.nil?) %>
+
+<!-- Вариант 3 -->
+<%# if(@hide_button_checkout) %>
+  <%#= button_to "Оформить заказ", new_order_path, method: :get, disabled: @hide_button_checkout %>
+  <% @hide_button_checkout = false %>
+<%# else %>
+  <%#= button_to "Оформить заказ", new_order_path, method: :get, disabled: @hide_button_checkout %>
+<%# end %>
+
+<!-- ============================================================================== -->
+
+
+<br>
+<%= render 'carts/warning_price_block' if(cart.total_price > currency_rate(Cart::WARNING_PRICE)) %>
+<hr />
+
+<%#= button_to 'Очистить корзину', cart, method: :delete, data: { confirm: 'Clear the cart?' } %>
+<%= button_to t('.empty'), cart, method: :delete, class: "btn btn-100",
+                                   data: { confirm: t('.empty_confirm') } %>
+<br>
+<br>

@@ -1,0 +1,26 @@
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+
+  <div class="entry">
+      <hr />
+      <h3><%= @product.title %></h3>
+      <%= image_tag(@product.image_url) %>
+        <p> <%= sanitize(@product.description) %> </p>
+        <div class="price_line">
+        <table border="0">
+          <tr>
+            <td>
+              <span class="price">
+                <%= t('.price_html') + number_to_currency(@product.price) %>
+              </span>
+            </td>
+            <td width="150px" align="right">
+            </td>
+          <tr>
+        </table>
+        <%= link_to 'Edit current product', edit_product_path %><br>
+        </div>
+  </div>
+

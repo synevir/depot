@@ -1,0 +1,32 @@
+
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+<%= render 'title' %>
+
+<% @products = Product.search(params[:search]).order(:title) %>
+
+<p>
+  <% if @products.count != Product.all.count %>
+    <% if @products.count > 0 %>
+       По запросу <strong>" <%= params[:search] %> "</strong>
+       найдено <%= pluralize(@products.count, 'product') %> :
+    <% else %>
+      <%= t('.search_fall')%>
+    <% end %>
+  <% end %>
+</p>
+
+<% @products = @products.paginate(page: params[:page], per_page: 3) %>
+  <%= will_paginate @products %>
+
+<div>
+  <%= render 'product' %>
+  <hr />
+</div>
+
+<div class="store_pag" >
+  <%= will_paginate @products %>
+</div>
+<br>

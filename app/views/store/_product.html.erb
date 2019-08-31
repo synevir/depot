@@ -1,0 +1,32 @@
+<% @products.each do |product| %>
+    <div class="entry">
+      <h2> <%= product.title %> </h2>
+      <%= image_tag(product.image_url) %>
+      <p> <%= sanitize(product.description) %> </p>
+      <%= link_to t('.product_details'), product, class:"a_details" %><br/>
+        <div class="price_line">
+        <table class="last_line_in_product">
+          <tr>
+            <td>
+              <span class="price">
+<!--              Price: <%#= number_to_currency(product.price, unit: "₴", format: "%n %u") %> -->
+
+                  <!--  price localization, variant with using function from helper -->
+                  <%#= t('.price_html') + number_to_currency( currency_rate(product.price),
+                  											 delimiter: " ", format: "%n %u") %>
+
+                  <!--  price localization, variant with models method -->
+                  <%= t('.price_html') + number_to_currency( product.local_price,
+                  											 delimiter: " ", format: "%n %u") %>
+              </span>
+            </td>
+            <td class="cell_button_add">
+<!--           <%#= button_to( 'Add to Cart', line_items_path(product_id: product), remote: true) %> -->
+               <%= button_to( t('.add_html'), line_items_path(product_id: product),
+                              class: "btn btn-sm btn-primary", remote: true) %>
+            </td>
+          </tr>
+        </table>
+        </div>
+    </div>
+  <% end %>

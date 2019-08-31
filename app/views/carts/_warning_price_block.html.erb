@@ -1,0 +1,15 @@
+<style>
+#warning_price_block{
+    color: #FF6347;
+  display: block;
+  padding: 5px;
+   margin: 5px;
+font-size: small;
+}
+</style>
+
+<div id="warning_price_block">
+  Sum in your's cart is biggest then
+  <%= number_to_currency(Cart::WARNING_PRICE, precision: 0, unit: '$', delimiter: ' ', format: "%n %u") %>
+  , be attentive!
+</div>
